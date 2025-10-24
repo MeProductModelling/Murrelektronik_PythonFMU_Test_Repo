@@ -1,0 +1,50 @@
+{
+    "X0": {
+        "PIN 2": "DO",
+        "PIN 4": "DO"
+    },
+    "X1": {
+        "PIN 2": "DO",
+        "PIN 4": "DO"
+    },
+    "X2": {
+        "PIN 2": "DO",
+        "PIN 4": "DO"
+    },
+    "X3": {
+        "PIN 2": "DI",
+        "PIN 4": "DI"
+    },
+    "X4": {
+        "PIN 2": "DI",
+        "PIN 4": "DI"
+    },
+    "X5": {
+        "PIN 2": "DI",
+        "PIN 4": "DI"
+    },
+    "X6": {
+        "PIN 2": "DO",
+        "PIN 4": "DI / IO-Link (US)"
+    },
+    "X7": {
+        "PIN 2": "DO",
+        "PIN 4": "DI / IO-Link (US)"
+    },
+    "XD1": {
+        "PIN 2": "0 V (US)",
+        "PIN 4": "0 V (UA)"
+    },
+    "XD2": {
+        "PIN 2": "0 V (US)",
+        "PIN 4": "0 V (UA)"
+    },
+    "XF1": {
+        "PIN 2": "TD -",
+        "PIN 4": "n.c."
+    },
+    "XF2": {
+        "PIN 2": "TD -",
+        "PIN 4": "n.c."
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "DeviceAccessPointItem": {
+        "ID": "54530",
+        "ModuleIdentNumber": "0xD502",
+        "DNS_CompatibleName": "MVK-MPNIO",
+        "PhysicalSlots": "0..2",
+        "MinDeviceInterval": "8",
+        "ImplementationType": "netX",
+        "FixedInSlots": "0",
+        "ObjectUUID_LocalIndex": "1",
+        "PowerOnToCommReady": "500",
+        "ParameterizationSpeedupSupported": "true",
+        "MultipleWriteSupported": "true",
+        "DeviceAccessSupported": "true",
+        "NumberOfDeviceAccessAR": "1",
+        "NameOfStationNotTransferable": "true",
+        "PNIO_Version": "V2.33",
+        "SharedDeviceSupported": "true",
+        "SharedInputSupported": "false",
+        "AddressAssignment": "DCP",
+        "LLDP_NoD_Supported": "true",
+        "PrmBeginPrmEndSequenceSupported": "false",
+        "CheckDeviceID_Allowed": "true",
+        "ResetToFactoryModes": "2",
+        "PROFIenergyASE_Supported": "true"
+    },
+    "ModuleInfo": {
+        "@attributes": {
+            "CategoryRef": "Category_V50"
+        },
+        "Name": {
+            "@attributes": {
+                "TextId": "MVK_V50 54530 DI16"
+            }
+        },
+        "InfoText": {
+            "@attributes": {
+                "TextId": "PROFINET IO module with 16 digital input signals, IP67 protection type M12"
+            }
+        },
+        "Family": {
+            "@attributes": {
+                "MainFamily": "I/O",
+                "ProductFamily": "MVK-MPNIO"
+            }
+        },
+        "VendorName": {
+            "@attributes": {
+                "Value": "Murrelektronik"
+            }
+        },
+        "OrderNumber": {
+            "@attributes": {
+                "Value": "54530"
+            }
+        },
+        "HardwareRelease": {
+            "@attributes": {
+                "Value": "2.00"
+            }
+        },
+        "SoftwareRelease": {
+            "@attributes": {
+                "Value": "1.18.00"
+            }
+        }
+    },
+    "UseableModules": [
+        {
+            "ModuleItemTarget": "DI_MASTER",
+            "FixedInSlots": "1"
+        },
+        {
+            "ModuleItemTarget": "DI_SHARED",
+            "AllowedInSlots": "2..2"
+        }
+    ],
+    "ResolvedModuleItems": {
+        "DI_MASTER": {
+            "SubmoduleItems": [
+                {
+                    "ID": "80",
+                    "Name": "Parameters/Diagnosis",
+                    "Description": "Virtual module used for global parameters and diagnosis"
+                },
+                {
+                    "ID": "81",
+                    "Name": "Digital Input",
+                    "Description": "Reserves two byte for digital input"
+                },
+                {
+                    "ID": "12",
+                    "Name": "Qualifier Digital Input",
+                    "Description": "Reserves two byte for input qualifier"
+                },
+                {
+                    "ID": "14",
+                    "Name": "System state",
+                    "Description": "Virtual module with system state information"
+                }
+            ]
+        },
+        "DI_SHARED": {
+            "SubmoduleItems": [
+                {
+                    "ID": "82",
+                    "Name": "Parameters/Diagnosis",
+                    "Description": "Virtual module used for global parameters and diagnosis"
+                },
+                {
+                    "ID": "83",
+                    "Name": "Digital Input",
+                    "Description": "Reserves two byte for digital input"
+                },
+                {
+                    "ID": "22",
+                    "Name": "Qualifier Digital Input",
+                    "Description": "Reserves two byte for input qualifier"
+                },
+                {
+                    "ID": "24",
+                    "Name": "System state",
+                    "Description": "Virtual module with system state information"
+                }
+            ]
+        }
+    },
+    "ParameterRecordDataItem": []
+}

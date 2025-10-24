@@ -1,0 +1,30 @@
+{
+    "X4": {
+        "PIN 2": "DI / DO",
+        "PIN 4": "DI / DO"
+    },
+    "X5": {
+        "PIN 2": "DI / DO",
+        "PIN 4": "DI / DO"
+    },
+    "X6": {
+        "PIN 2": "DI / DO",
+        "PIN 4": "DI / DO"
+    },
+    "X7": {
+        "PIN 2": "DI / DO",
+        "PIN 4": "DI / DO"
+    },
+    "XD1": {
+        "PIN 2": "0 V",
+        "PIN 4": "24 V DC (UA)"
+    },
+    "XD2": {
+        "PIN 2": "0 V",
+        "PIN 4": "24 V DC (UA)"
+    },
+    "XF2": {
+        "PIN 2": "RD +",
+        "PIN 4": "RD -"
+    }
+}

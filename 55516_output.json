@@ -1,0 +1,575 @@
+{
+    "DeviceAccessPointItem": {
+        "ID": "55516",
+        "ModuleIdentNumber": "0xD8DC",
+        "DNS_CompatibleName": "MVK-MPNIO",
+        "PhysicalSlots": "0..4",
+        "MinDeviceInterval": "8",
+        "ImplementationType": "netX",
+        "FixedInSlots": "0",
+        "ObjectUUID_LocalIndex": "1",
+        "PowerOnToCommReady": "500",
+        "ParameterizationSpeedupSupported": "true",
+        "MultipleWriteSupported": "true",
+        "DeviceAccessSupported": "true",
+        "NumberOfDeviceAccessAR": "1",
+        "NameOfStationNotTransferable": "true",
+        "PNIO_Version": "V2.33",
+        "SharedDeviceSupported": "true",
+        "SharedInputSupported": "false",
+        "AddressAssignment": "DCP",
+        "LLDP_NoD_Supported": "true",
+        "PrmBeginPrmEndSequenceSupported": "false",
+        "CheckDeviceID_Allowed": "true",
+        "ResetToFactoryModes": "2",
+        "PROFIenergyASE_Supported": "true"
+    },
+    "ModuleInfo": {
+        "@attributes": {
+            "CategoryRef": "Category_V50"
+        },
+        "Name": {
+            "@attributes": {
+                "TextId": "MVK_V50 DI6 DO6 IOL2"
+            }
+        },
+        "InfoText": {
+            "@attributes": {
+                "TextId": "PROFINET IO module with 6 digital input signals, 6 digital output signals and 2 IO-Link class B ports, IP67 protection type PP"
+            }
+        },
+        "Family": {
+            "@attributes": {
+                "MainFamily": "I/O",
+                "ProductFamily": "MVK-MPNIO"
+            }
+        },
+        "VendorName": {
+            "@attributes": {
+                "Value": "Murrelektronik"
+            }
+        },
+        "OrderNumber": {
+            "@attributes": {
+                "Value": "55516"
+            }
+        },
+        "HardwareRelease": {
+            "@attributes": {
+                "Value": "2.00"
+            }
+        },
+        "SoftwareRelease": {
+            "@attributes": {
+                "Value": "1.22.00"
+            }
+        }
+    },
+    "UseableModules": [
+        {
+            "ModuleItemTarget": "DIO_MASTER_IOL2_EXT1",
+            "FixedInSlots": "1"
+        },
+        {
+            "ModuleItemTarget": "IOL2_MASTER_SI",
+            "FixedInSlots": "2"
+        },
+        {
+            "ModuleItemTarget": "DIO_SHARED_EXT1",
+            "AllowedInSlots": "3..4"
+        },
+        {
+            "ModuleItemTarget": "IOL2_SHARED_SI",
+            "AllowedInSlots": "3..4"
+        }
+    ],
+    "ResolvedModuleItems": {
+        "DIO_MASTER_IOL2_EXT1": {
+            "SubmoduleItems": [
+                {
+                    "ID": "70",
+                    "Name": "Parameters/Diagnosis",
+                    "Description": "Virtual module used for global parameters and diagnosis"
+                },
+                {
+                    "ID": "11",
+                    "Name": "Digital IO",
+                    "Description": "Reserves two byte for digital io"
+                },
+                {
+                    "ID": "12",
+                    "Name": "Qualifier Digital Input",
+                    "Description": "Reserves two byte for input qualifier"
+                },
+                {
+                    "ID": "13",
+                    "Name": "Qualifier Digital Output",
+                    "Description": "Reserves two byte for output qualifier"
+                },
+                {
+                    "ID": "14",
+                    "Name": "System state",
+                    "Description": "Virtual module with system state information"
+                }
+            ]
+        },
+        "IOL2_MASTER_SI": {
+            "SubmoduleItems": [
+                {
+                    "ID": "10000",
+                    "Name": "Deactivated",
+                    "Description": "Deactivated"
+                },
+                {
+                    "ID": "10000_SI",
+                    "Name": "IOL_I/O_SI",
+                    "Description": "IOL_I/O_SI"
+                },
+                {
+                    "ID": "10200",
+                    "Name": "Input 2 Byte",
+                    "Description": "Input 2 Byte"
+                },
+                {
+                    "ID": "10400",
+                    "Name": "Input 4 Byte",
+                    "Description": "Input 4 Byte"
+                },
+                {
+                    "ID": "10800",
+                    "Name": "Input 8 Byte",
+                    "Description": "Input 8 Byte"
+                },
+                {
+                    "ID": "11200",
+                    "Name": "Input 12 Byte",
+                    "Description": "Input 12 Byte"
+                },
+                {
+                    "ID": "11600",
+                    "Name": "Input 16 Byte",
+                    "Description": "Input 16 Byte"
+                },
+                {
+                    "ID": "12000",
+                    "Name": "Input 20 Byte",
+                    "Description": "Input 20 Byte"
+                },
+                {
+                    "ID": "12400",
+                    "Name": "Input 24 Byte",
+                    "Description": "Input 24 Byte"
+                },
+                {
+                    "ID": "13200",
+                    "Name": "Input 32 Byte",
+                    "Description": "Input 32 Byte"
+                },
+                {
+                    "ID": "10002",
+                    "Name": "Output 2 Byte",
+                    "Description": "Output 2 Byte"
+                },
+                {
+                    "ID": "10004",
+                    "Name": "Output 4 Byte",
+                    "Description": "Output 4 Byte"
+                },
+                {
+                    "ID": "10008",
+                    "Name": "Output 8 Byte",
+                    "Description": "Output 8 Byte"
+                },
+                {
+                    "ID": "10012",
+                    "Name": "Output 12 Byte",
+                    "Description": "Output 12 Byte"
+                },
+                {
+                    "ID": "10016",
+                    "Name": "Output 16 Byte",
+                    "Description": "Output 16 Byte"
+                },
+                {
+                    "ID": "10020",
+                    "Name": "Output 20 Byte",
+                    "Description": "Output 20 Byte"
+                },
+                {
+                    "ID": "10024",
+                    "Name": "Output 24 Byte",
+                    "Description": "Output 24 Byte"
+                },
+                {
+                    "ID": "10032",
+                    "Name": "Output 32 Byte",
+                    "Description": "Output 32 Byte"
+                },
+                {
+                    "ID": "10202",
+                    "Name": "IO 2/2 Byte",
+                    "Description": "IO 2/2 Byte"
+                },
+                {
+                    "ID": "10402",
+                    "Name": "IO 4/2 Byte",
+                    "Description": "IO 4/2 Byte"
+                },
+                {
+                    "ID": "10404",
+                    "Name": "IO 4/4 Byte",
+                    "Description": "IO 4/4 Byte"
+                },
+                {
+                    "ID": "10802",
+                    "Name": "IO 8/2 Byte",
+                    "Description": "IO 8/2 Byte"
+                },
+                {
+                    "ID": "10804",
+                    "Name": "IO 8/4 Byte",
+                    "Description": "IO 8/4 Byte"
+                },
+                {
+                    "ID": "10808",
+                    "Name": "IO 8/8 Byte",
+                    "Description": "IO 8/8 Byte"
+                },
+                {
+                    "ID": "11202",
+                    "Name": "IO 12/2 Byte",
+                    "Description": "IO 12/2 Byte"
+                },
+                {
+                    "ID": "11204",
+                    "Name": "IO 12/4 Byte",
+                    "Description": "IO 12/4 Byte"
+                },
+                {
+                    "ID": "11208",
+                    "Name": "IO 12/8 Byte",
+                    "Description": "IO 12/8 Byte"
+                },
+                {
+                    "ID": "11212",
+                    "Name": "IO 12/12 Byte",
+                    "Description": "IO 12/12 Byte"
+                },
+                {
+                    "ID": "11602",
+                    "Name": "IO 16/2 Byte",
+                    "Description": "IO 16/2 Byte"
+                },
+                {
+                    "ID": "11604",
+                    "Name": "IO 16/4 Byte",
+                    "Description": "IO 16/4 Byte"
+                },
+                {
+                    "ID": "11608",
+                    "Name": "IO 16/8 Byte",
+                    "Description": "IO 16/8 Byte"
+                },
+                {
+                    "ID": "11612",
+                    "Name": "IO 16/12 Byte",
+                    "Description": "IO 16/12 Byte"
+                },
+                {
+                    "ID": "11616",
+                    "Name": "IO 16/16 Byte",
+                    "Description": "IO 16/16 Byte"
+                },
+                {
+                    "ID": "12404",
+                    "Name": "IO 24/4 Byte",
+                    "Description": "IO 24/4 Byte"
+                },
+                {
+                    "ID": "12408",
+                    "Name": "IO 24/8 Byte",
+                    "Description": "IO 24/8 Byte"
+                },
+                {
+                    "ID": "12416",
+                    "Name": "IO 24/16 Byte",
+                    "Description": "IO 24/16 Byte"
+                },
+                {
+                    "ID": "12424",
+                    "Name": "IO 24/24 Byte",
+                    "Description": "IO 24/24 Byte"
+                },
+                {
+                    "ID": "13204",
+                    "Name": "IO 32/4 Byte",
+                    "Description": "IO 32/4 Byte"
+                },
+                {
+                    "ID": "13208",
+                    "Name": "IO 32/8 Byte",
+                    "Description": "IO 32/8 Byte"
+                },
+                {
+                    "ID": "13216",
+                    "Name": "IO 32/16 Byte",
+                    "Description": "IO 32/16 Byte"
+                },
+                {
+                    "ID": "13224",
+                    "Name": "IO 32/24 Byte",
+                    "Description": "IO 32/24 Byte"
+                },
+                {
+                    "ID": "13232",
+                    "Name": "IO 32/32 Byte",
+                    "Description": "IO 32/32 Byte"
+                }
+            ]
+        },
+        "DIO_SHARED_EXT1": {
+            "SubmoduleItems": [
+                {
+                    "ID": "30",
+                    "Name": "Parameters/Diagnosis",
+                    "Description": "Virtual module used for global parameters and diagnosis"
+                },
+                {
+                    "ID": "21",
+                    "Name": "Digital IO",
+                    "Description": "Reserves four byte for digital io"
+                },
+                {
+                    "ID": "22",
+                    "Name": "Qualifier Digital Input",
+                    "Description": "Reserves two byte for input qualifier"
+                },
+                {
+                    "ID": "23",
+                    "Name": "Qualifier Digital Output",
+                    "Description": "Reserves two byte for output qualifier"
+                },
+                {
+                    "ID": "24",
+                    "Name": "System state",
+                    "Description": "Virtual module with system state information"
+                }
+            ]
+        },
+        "IOL2_SHARED_SI": {
+            "SubmoduleItems": [
+                {
+                    "ID": "20000",
+                    "Name": "Deactivated",
+                    "Description": "Deactivated"
+                },
+                {
+                    "ID": "20000_SI",
+                    "Name": "IOL_I/O_SI",
+                    "Description": "IOL_I/O_SI"
+                },
+                {
+                    "ID": "20200",
+                    "Name": "Input 2 Byte",
+                    "Description": "Input 2 Byte"
+                },
+                {
+                    "ID": "20400",
+                    "Name": "Input 4 Byte",
+                    "Description": "Input 4 Byte"
+                },
+                {
+                    "ID": "20800",
+                    "Name": "Input 8 Byte",
+                    "Description": "Input 8 Byte"
+                },
+                {
+                    "ID": "21200",
+                    "Name": "Input 12 Byte",
+                    "Description": "Input 12 Byte"
+                },
+                {
+                    "ID": "21600",
+                    "Name": "Input 16 Byte",
+                    "Description": "Input 16 Byte"
+                },
+                {
+                    "ID": "22000",
+                    "Name": "Input 20 Byte",
+                    "Description": "Input 20 Byte"
+                },
+                {
+                    "ID": "22400",
+                    "Name": "Input 24 Byte",
+                    "Description": "Input 24 Byte"
+                },
+                {
+                    "ID": "23200",
+                    "Name": "Input 32 Byte",
+                    "Description": "Input 32 Byte"
+                },
+                {
+                    "ID": "20002",
+                    "Name": "Output 2 Byte",
+                    "Description": "Output 2 Byte"
+                },
+                {
+                    "ID": "20004",
+                    "Name": "Output 4 Byte",
+                    "Description": "Output 4 Byte"
+                },
+                {
+                    "ID": "20008",
+                    "Name": "Output 8 Byte",
+                    "Description": "Output 8 Byte"
+                },
+                {
+                    "ID": "20012",
+                    "Name": "Output 12 Byte",
+                    "Description": "Output 12 Byte"
+                },
+                {
+                    "ID": "20016",
+                    "Name": "Output 16 Byte",
+                    "Description": "Output 16 Byte"
+                },
+                {
+                    "ID": "20020",
+                    "Name": "Output 20 Byte",
+                    "Description": "Output 20 Byte"
+                },
+                {
+                    "ID": "20024",
+                    "Name": "Output 24 Byte",
+                    "Description": "Output 24 Byte"
+                },
+                {
+                    "ID": "20032",
+                    "Name": "Output 32 Byte",
+                    "Description": "Output 32 Byte"
+                },
+                {
+                    "ID": "20202",
+                    "Name": "IO 2/2 Byte",
+                    "Description": "IO 2/2 Byte"
+                },
+                {
+                    "ID": "20402",
+                    "Name": "IO 4/2 Byte",
+                    "Description": "IO 4/2 Byte"
+                },
+                {
+                    "ID": "20404",
+                    "Name": "IO 4/4 Byte",
+                    "Description": "IO 4/4 Byte"
+                },
+                {
+                    "ID": "20802",
+                    "Name": "IO 8/2 Byte",
+                    "Description": "IO 8/2 Byte"
+                },
+                {
+                    "ID": "20804",
+                    "Name": "IO 8/4 Byte",
+                    "Description": "IO 8/4 Byte"
+                },
+                {
+                    "ID": "20808",
+                    "Name": "IO 8/8 Byte",
+                    "Description": "IO 8/8 Byte"
+                },
+                {
+                    "ID": "21202",
+                    "Name": "IO 12/2 Byte",
+                    "Description": "IO 12/2 Byte"
+                },
+                {
+                    "ID": "21204",
+                    "Name": "IO 12/4 Byte",
+                    "Description": "IO 12/4 Byte"
+                },
+                {
+                    "ID": "21208",
+                    "Name": "IO 12/8 Byte",
+                    "Description": "IO 12/8 Byte"
+                },
+                {
+                    "ID": "21212",
+                    "Name": "IO 12/12 Byte",
+                    "Description": "IO 12/12 Byte"
+                },
+                {
+                    "ID": "21602",
+                    "Name": "IO 16/2 Byte",
+                    "Description": "IO 16/2 Byte"
+                },
+                {
+                    "ID": "21604",
+                    "Name": "IO 16/4 Byte",
+                    "Description": "IO 16/4 Byte"
+                },
+                {
+                    "ID": "21608",
+                    "Name": "IO 16/8 Byte",
+                    "Description": "IO 16/8 Byte"
+                },
+                {
+                    "ID": "21612",
+                    "Name": "IO 16/12 Byte",
+                    "Description": "IO 16/12 Byte"
+                },
+                {
+                    "ID": "21616",
+                    "Name": "IO 16/16 Byte",
+                    "Description": "IO 16/16 Byte"
+                },
+                {
+                    "ID": "22404",
+                    "Name": "IO 24/4 Byte",
+                    "Description": "IO 24/4 Byte"
+                },
+                {
+                    "ID": "22408",
+                    "Name": "IO 24/8 Byte",
+                    "Description": "IO 24/8 Byte"
+                },
+                {
+                    "ID": "22416",
+                    "Name": "IO 24/16 Byte",
+                    "Description": "IO 24/16 Byte"
+                },
+                {
+                    "ID": "22424",
+                    "Name": "IO 24/24 Byte",
+                    "Description": "IO 24/24 Byte"
+                },
+                {
+                    "ID": "23204",
+                    "Name": "IO 32/4 Byte",
+                    "Description": "IO 32/4 Byte"
+                },
+                {
+                    "ID": "23208",
+                    "Name": "IO 32/8 Byte",
+                    "Description": "IO 32/8 Byte"
+                },
+                {
+                    "ID": "23216",
+                    "Name": "IO 32/16 Byte",
+                    "Description": "IO 32/16 Byte"
+                },
+                {
+                    "ID": "23224",
+                    "Name": "IO 32/24 Byte",
+                    "Description": "IO 32/24 Byte"
+                },
+                {
+                    "ID": "23232",
+                    "Name": "IO 32/32 Byte",
+                    "Description": "IO 32/32 Byte"
+                }
+            ]
+        }
+    },
+    "ParameterRecordDataItem": []
+}
