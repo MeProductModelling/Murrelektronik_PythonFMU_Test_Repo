@@ -9,7 +9,7 @@ def get_out_bytes_to_PLC_from_SMBlock (inputs):
         def _get_out_bytes():
             # This following section is to convert bits to bytes...i.e sensor values to a bit.
             # DI 8. These Inputs are from Sensor which are usually connected in simulation tool.
-            self.outByte1, self.outByte2 = digital_inputs(
+            self.plc_ios.outByte1, self.plc_ios.outByte2 = digital_inputs(
                 np.array(
                     [
                     '''+ "\n"
@@ -38,7 +38,7 @@ def get_out_bytes_to_PLC_from_SMBlock (inputs):
         def _get_out_bytes():
             # This following section is to convert bits to bytes...i.e sensor values to a bit.
             # DI 16. These Inputs are from Sensor which are usually connected in simulation tool.
-            self.outByte1, self.outByte2 = digital_inputs_16(
+            self.plc_ios.outByte1, self.plc_ios.outByte2 = digital_inputs_16(
                 np.array(
                     [
                     ''' + "\n"
