@@ -90,11 +90,17 @@ def generate_constructor(json_data):
             lines.append(f"        self.{Actuator_instance_name} = {Actuator_class_type}()")
             lines.append(f"        self.{Actuator_instance_name}.register(self)\n")
 
-    lines.append(f"        self.plc_ios = PLCIOs()")
-    lines.append(f"        self.plc_ios.register(self)\n")
+    lines.append(f"        self.plc_is = PLCIs()")
+    lines.append(f"        self.plc_is.register(self)\n")
 
-    lines.append(f"        self.user_interface_ios = UserInterfaceIOs()")
-    lines.append(f"        self.user_interface_ios.register(self)\n")
+    lines.append(f"        self.plc_os = PLCOs()")
+    lines.append(f"        self.plc_os.register(self)\n")
+
+    lines.append(f"        self.user_interface_is = UserInterfaceIs()")
+    lines.append(f"        self.user_interface_is.register(self)\n")
+
+    lines.append(f"        self.user_interface_os = UserInterfaceOs()")
+    lines.append(f"        self.user_interface_os.register(self)\n")
 
     # Time and metadata
     lines.append('        self.author = "Raj Kumar"')

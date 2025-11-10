@@ -3,6 +3,7 @@ from tkinter import filedialog
 from gsdml_parser import parse_component_info
 import json
 from MainDeviceScripts.Genearate import generate_code_from_json
+from MainDeviceScripts.GeneratePythonfile import generate_code_from_json_1
 from AASXSubmodelConnectorsParser import extract_pins_as_major_tags
 import AASXConnectorsData
 from pathlib import Path
@@ -49,7 +50,7 @@ def main():
     with open(output_path_connectors_info, "r") as f:
         data_connectors = json.load(f)
 
-    generated_code = generate_code_from_json(data, data_connectors)
+    generated_code = generate_code_from_json_1(data, data_connectors)
     if generated_code:
         print("Code generation complete")
     else:

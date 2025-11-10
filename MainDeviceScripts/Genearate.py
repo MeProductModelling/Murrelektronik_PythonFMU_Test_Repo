@@ -56,12 +56,7 @@ def generate_code_from_json(data, data_connectors):
     generate_qualifier_dos = any(sub.get("ID") == "13" for sub in submodules)
     generate_systemstate = any(sub.get("ID") == "14" for sub in submodules)
 
-    #The code factoring starts form this.
-    #1. Header files, constructor and do_step methods come from this point.
-    generated_constructor_code = generate_constructor(data)
 
-    #Store it in output-code string
-    output_code = generated_constructor_code + "\n\n"
 
     # Seperate pins and it's function from the JSON to lists
     di_pins = []
@@ -85,6 +80,13 @@ def generate_code_from_json(data, data_connectors):
                 # pin looks like "PIN2" -> extract number part
                 pin_num = pin.replace("PIN ", "")
                 do_pins.append(f"{connector}_{pin_num}")
+
+    #The code factoring starts form this.
+    #1. Header files, constructor and do_step methods come from this point.
+    generated_constructor_code = generate_constructor(data)
+
+    #Store it in output-code string
+    output_code = generated_constructor_code + "\n\n"
 
     # Here enters the do_step algorithm that changes for every device.
     output_code += generate_algorithm(di_pins, do_pins, generate_qualifier_dis, generate_qualifier_dos) +  "\n\n"

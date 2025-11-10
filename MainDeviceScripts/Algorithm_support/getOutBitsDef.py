@@ -14,19 +14,36 @@ def get_out_bits_to_PLC_from_SMBlock(outputs):
         for pins in outputs:
             counter += 1
             if pins != 0 and pins != "0" and counter != len(outputs):
-                out_2 +=   "\t" + "\t" + "\t" +"self.actuator_outputs."+ pins + "," + "\n"
+                out_2 += "\t" + "\t" + "\t" + "self." + pins + "," + "\n"
             if pins != 0 and pins != "0" and counter == len(outputs):
-                out_2 +=   "\t" + "\t" + "\t" +"self.actuator_outputs."+ pins + "\n"
+                out_2 += "\t" + "\t" + "\t" + "self." + pins + "\n"
+
+       # for pins in outputs:
+       #     counter += 1
+       #     if pins != 0 and pins != "0" and counter != len(outputs):
+       #         out_2 +=   "\t" + "\t" + "\t" +"self.actuator_outputs."+ pins + "," + "\n"
+       #     if pins != 0 and pins != "0" and counter == len(outputs):
+       #         out_2 +=   "\t" + "\t" + "\t" +"self.actuator_outputs."+ pins + "\n"
 
         out_3 = '''
-            ) = digital_outputs(
-                self.plc_ios.inByte1,
-                self.plc_ios.inByte2,
-                self.parameters.PinBased,
-                self.parameters.PortBased,
-                self.parameters.Compact,
-            )
-            '''
+                  ) = digital_outputs(
+                      self.inByte1,
+                      self.inByte2,
+                      self.PinBased,
+                      self.PortBased,
+                      self.Compact,
+                  )
+                  '''
+
+       # out_3 = '''
+       #     ) = digital_outputs(
+       #         self.plc_is.inByte1,
+       #         self.plc_is.inByte2,
+       #         self.parameters.PinBased,
+       #         self.parameters.PortBased,
+       #         self.parameters.Compact,
+       #     )
+       #     '''
         output = out_1 + out_2 + out_3
 
     elif 16 >= len(outputs) > 8:
@@ -39,22 +56,41 @@ def get_out_bits_to_PLC_from_SMBlock(outputs):
 
         out_2 = ""
         counter = 0
+
         for pins in outputs:
             counter += 1
             if pins != 0 and pins != "0" and counter != len(outputs):
-                out_2 += "\t" + "\t" + "\t" + "self.actuator_outputs." + pins + "," + "\n"
+                out_2 += "\t" + "\t" + "\t" + "self." + pins + "," + "\n"
             if pins != 0 and pins != "0" and counter == len(outputs):
-                out_2 += "\t" + "\t" + "\t" + "self.actuator_outputs." + pins  + "\n"
+                out_2 += "\t" + "\t" + "\t" + "self." + pins + "\n"
+
+       # for pins in outputs:
+       #     counter += 1
+       #     if pins != 0 and pins != "0" and counter != len(outputs):
+       #         out_2 += "\t" + "\t" + "\t" + "self.actuator_outputs." + pins + "," + "\n"
+       #     if pins != 0 and pins != "0" and counter == len(outputs):
+       #         out_2 += "\t" + "\t" + "\t" + "self.actuator_outputs." + pins  + "\n"
 
         out_3 = '''
-                    ) = digital_outputs_16(
-                        self.plc_ios.inByte1,
-                        self.plc_ios.inByte2,
-                        self.parameters.PinBased,
-                        self.parameters.PortBased,
-                        self.parameters.Compact,
-                    )
-            '''
+                   ) = digital_outputs_16(
+                       self.inByte1,
+                       self.inByte2,
+                       self.PinBased,
+                       self.PortBased,
+                       self.Compact,
+                   )
+           '''
+
+        #out_3 = '''
+        #            ) = digital_outputs_16(
+        #                self.plc_is.inByte1,
+        #                self.plc_is.inByte2,
+        #                self.parameters.PinBased,
+        #                self.parameters.PortBased,
+        #                self.parameters.Compact,
+        #            )
+        #    '''
+
         output = out_1 + out_2 + out_3
 
     return output

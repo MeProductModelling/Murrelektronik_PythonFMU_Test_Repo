@@ -66,6 +66,7 @@ class FmuBuilder:
         dest: FilePath = ".",
         project_files: Iterable[FilePath] = set(),
         documentation_folder: Optional[FilePath] = None,
+        terminals : Optional[FilePath] = None,
         **options,
     ) -> Path:
         script_file = Path(script_file)
@@ -84,6 +85,17 @@ class FmuBuilder:
             if not documentation_folder.exists():
                 raise ValueError(
                     f"The documentation folder does not exists {documentation_folder!s}"
+                )
+        
+        if terminals is not None:
+            terminals = Path(terminals)
+            if not terminals.exists():
+                raise ValueError(
+                    f"The specified terminalsAndIcons file does not exists {terminals!s}"
+                )
+            if not terminals.name == "terminalsAndIcons.xml":
+                raise ValueError(
+                    f"Incorrect terminal name {terminals!s}. Terminal file must be named terminalsAndIcons.xml"
                 )
 
         module_name = script_file.stem
@@ -178,6 +190,12 @@ class FmuBuilder:
                             relative_f = f.relative_to(documentation_folder)
                             zip_fmu.write(f, arcname=(documentation / relative_f))
 
+                if terminals is not None:
+                    terminalsFolder = Path("terminalsAndIcons")
+                    relative_f = terminals.relative_to(terminals.parent)
+                    zip_fmu.write(f, arcname=(terminalsFolder / relative_f))
+                    
+
                 # Add the model description
                 xml_str = parseString(tostring(xml, "UTF-8"))
                 zip_fmu.writestr(
@@ -212,6 +230,13 @@ def create_command_parser(parser: argparse.ArgumentParser):
         "--doc",
         dest="documentation_folder",
         help="Documentation folder to include in the FMU.",
+        default=None
+    )
+
+    parser.add_argument(
+        "--terminals",
+        dest="terminals",
+        help="Terminals file (terminalsAndIcons.xml) to include in the FMU.",
         default=None
     )
 
