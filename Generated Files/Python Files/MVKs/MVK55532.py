@@ -34,29 +34,137 @@ class MVK55532(Fmi3Slave):
         """
         super().__init__(**kwargs)
 
-        self.parameters = Parameters()
-        self.parameters.register(self)
+        self.PinBased = True
+        self.PortBased = False
+        self.Compact = False
 
-        self.sensor_inputs = SensorInputs()
-        self.sensor_inputs.register(self)
+        self.IN_X0_2 = 1
+        self.IN_X0_4 = 1
+        self.IN_X1_2 = 1
+        self.IN_X1_4 = 1
+        self.IN_X2_2 = 1
+        self.IN_X2_4 = 1
+        self.IN_X3_2 = 1
+        self.IN_X3_4 = 1
+        self.IN_X4_2 = 1
+        self.IN_X4_4 = 1
+        self.IN_X5_2 = 1
+        self.IN_X5_4 = 1
+        self.IN_X6_2 = 1
+        self.IN_X6_4 = 1
+        self.IN_X7_2 = 1
+        self.IN_X7_4 = 1
 
-        self.actuator_outputs = ActuatorOutputs()
-        self.actuator_outputs.register(self)
 
-        self.qualifier_dis = QualifierDIs()
-        self.qualifier_dis.register(self)
+        self.qualifier_di_8_byte1 = 0
+        self.qualifier_di_8_byte2 = 0
 
-        self.qualifier_dos = QualifierDOs()
-        self.qualifier_dos.register(self)
+        self.outByte1 = 0
+        self.outByte2 = 0
 
-        self.system_state = SystemStates()
-        self.system_state.register(self)
+        self.OUT_X0_2 = 1
+        self.OUT_X0_4 = 1
+        self.OUT_X1_2 = 1
+        self.OUT_X1_4 = 1
+        self.OUT_X2_2 = 1
+        self.OUT_X2_4 = 1
+        self.OUT_X3_2 = 1
+        self.OUT_X3_4 = 1
+        self.OUT_X4_2 = 1
+        self.OUT_X4_4 = 1
+        self.OUT_X5_2 = 1
+        self.OUT_X5_4 = 1
+        self.OUT_X6_2 = 1
+        self.OUT_X6_4 = 1
+        self.OUT_X7_2 = 1
+        self.OUT_X7_4 = 1
 
-        self.plc_ios = PLCIOs()
-        self.plc_ios.register(self)
 
-        self.user_interface_ios = UserInterfaceIOs()
-        self.user_interface_ios.register(self)
+        self.qualifier_do_8_byte1 = 0
+        self.qualifier_do_8_byte2 = 0
+
+        self.inByte1 = 255
+        self.inByte2 = 255
+
+        self.system_state_byte_1 = 0
+        self.system_state_byte_2 = 0
+        self.system_state_byte_3 = 0
+        self.system_state_byte_4 = 0
+
+        self.Sensor_Voltage = 24.0
+        self.Actuator_Voltage = 24.0
+        self.actuator_short_circuit_trigger_value = 0
+        self.sensor_short_circuit_trigger_value = 0
+
+        self.LED_Off = 0
+        self.LED_Red = 0
+        self.LED_Green = 0
+
+        self.register_variable(Boolean('PinBased',causality=Fmi3Causality.parameter,variability=Fmi3Variability.tunable,description='Pin based mapping of inputs',))
+        self.register_variable(Boolean('PortBased',causality=Fmi3Causality.parameter,variability=Fmi3Variability.tunable,description='Port based mapping of inputs',))
+        self.register_variable(Boolean('Compact',causality=Fmi3Causality.parameter,variability=Fmi3Variability.tunable,description='Compact based mapping of inputs',))
+
+        self.register_variable(Int32('IN_X0_2',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X0_4',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X1_2',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X1_4',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X2_2',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X2_4',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X3_2',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X3_4',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X4_2',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X4_4',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X5_2',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X5_4',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X6_2',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X6_4',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X7_2',causality=Fmi3Causality.input,description='Sensor Input',))
+        self.register_variable(Int32('IN_X7_4',causality=Fmi3Causality.input,description='Sensor Input',))
+
+
+        self.register_variable(Int32('qualifier_di_8_byte1',causality=Fmi3Causality.output,description='To PLC: shows location of error in the module in inputs',))
+        self.register_variable(Int32('qualifier_di_8_byte2',causality=Fmi3Causality.output,description='To PLC: shows location of error in the module in inputs',))
+
+        self.register_variable(Int32('outByte1',causality=Fmi3Causality.output,description='To PLC: Sensor bits converted to Integer',))
+        self.register_variable(Int32('outByte2',causality=Fmi3Causality.output,description='To PLC: Sensor bits converted to Integer',))
+
+        self.register_variable(Int32('OUT_X0_2',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X0_4',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X1_2',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X1_4',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X2_2',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X2_4',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X3_2',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X3_4',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X4_2',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X4_4',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X5_2',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X5_4',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X6_2',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X6_4',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X7_2',causality=Fmi3Causality.output,description='Actuator Output',))
+        self.register_variable(Int32('OUT_X7_4',causality=Fmi3Causality.output,description='Actuator Output',))
+
+
+        self.register_variable(Int32('qualifier_do_8_byte1',causality=Fmi3Causality.output,description='To PLC: shows location of error in the module in outputs',))
+        self.register_variable(Int32('qualifier_do_8_byte2',causality=Fmi3Causality.output,description='To PLC: shows location of error in the module in outputs',))
+
+        self.register_variable(Int32('inByte1',causality=Fmi3Causality.input,description='From PLC: Integer value to set the actuators from the module',))
+        self.register_variable(Int32('inByte2',causality=Fmi3Causality.input,description='From PLC: Integer value to set the actuators from the module',))
+
+        self.register_variable(Int32('system_state_byte_1',causality=Fmi3Causality.output,description='To PLC: shows state of the module',))
+        self.register_variable(Int32('system_state_byte_2',causality=Fmi3Causality.output,description='To PLC: shows state of the module',))
+        self.register_variable(Int32('system_state_byte_3',causality=Fmi3Causality.output,description='To PLC: shows state of the module',))
+        self.register_variable(Int32('system_state_byte_4',causality=Fmi3Causality.output,description='To PLC: shows state of the module',))
+
+        self.register_variable(Float64('Sensor_Voltage',causality=Fmi3Causality.input,description='User Interface control of sensor voltage',))
+        self.register_variable(Float64('Actuator_Voltage',causality=Fmi3Causality.input,description='User Interface control of sensor voltage',))
+        self.register_variable(Int32('actuator_short_circuit_trigger_value',causality=Fmi3Causality.input,description='Sensor Short circuit can be triggered by changing values from 255 to 0-255',))
+        self.register_variable(Int32('sensor_short_circuit_trigger_value',causality=Fmi3Causality.input,description='Actuator Short circuit can be triggered by changing values from 255 to 0-255',))
+
+        self.register_variable(Int32('LED_Green',causality=Fmi3Causality.output,description='LED behaviour of the device',))
+        self.register_variable(Int32('LED_Red',causality=Fmi3Causality.output,description='LED behaviour of the device',))
+        self.register_variable(Int32('LED_Off',causality=Fmi3Causality.output,description='LED behaviour of the device',))
 
         self.author = "Raj Kumar"
         self.description = "A simple description of DIO 8 module from Murrelektronik catalogue"
@@ -75,32 +183,32 @@ class MVK55532(Fmi3Slave):
         def _get_out_bytes():
             # This following section is to convert bits to bytes...i.e sensor values to a bit.
             # DI 16. These Inputs are from Sensor which are usually connected in simulation tool.
-            self.plc_ios.outByte1, self.plc_ios.outByte2 = digital_inputs_16(
+            self.outByte1, self.outByte2 = digital_inputs_16(
                 np.array(
                     [
                     
-                    self.sensor_inputs.X0_2,
-                    self.sensor_inputs.X0_4,
-                    self.sensor_inputs.X1_2,
-                    self.sensor_inputs.X1_4,
-                    self.sensor_inputs.X2_2,
-                    self.sensor_inputs.X2_4,
-                    self.sensor_inputs.X3_2,
-                    self.sensor_inputs.X3_4,
-                    self.sensor_inputs.X4_2,
-                    self.sensor_inputs.X4_4,
-                    self.sensor_inputs.X5_2,
-                    self.sensor_inputs.X5_4,
-                    self.sensor_inputs.X6_2,
-                    self.sensor_inputs.X6_4,
-                    self.sensor_inputs.X7_2,
-                    self.sensor_inputs.X7_4
+					self.IN_X0_2,
+					self.IN_X0_4,
+					self.IN_X1_2,
+					self.IN_X1_4,
+					self.IN_X2_2,
+					self.IN_X2_4,
+					self.IN_X3_2,
+					self.IN_X3_4,
+					self.IN_X4_2,
+					self.IN_X4_4,
+					self.IN_X5_2,
+					self.IN_X5_4,
+					self.IN_X6_2,
+					self.IN_X6_4,
+					self.IN_X7_2,
+					self.IN_X7_4
 
                 ]
             ),
-            self.parameters.PinBased,
-            self.parameters.PortBased,
-            self.parameters.Compact,
+            self.PinBased,
+            self.PortBased,
+            self.Compact,
         )
         
 
@@ -109,72 +217,72 @@ class MVK55532(Fmi3Slave):
             # DO 16. These Outputs are connected to actuators in simulation tool.
             (
         
-            self.actuator_outputs.X0_2,
-            self.actuator_outputs.X0_4,
-            self.actuator_outputs.X1_2,
-            self.actuator_outputs.X1_4,
-            self.actuator_outputs.X2_2,
-            self.actuator_outputs.X2_4,
-            self.actuator_outputs.X3_2,
-            self.actuator_outputs.X3_4,
-            self.actuator_outputs.X4_2,
-            self.actuator_outputs.X4_4,
-            self.actuator_outputs.X5_2,
-            self.actuator_outputs.X5_4,
-            self.actuator_outputs.X6_2,
-            self.actuator_outputs.X6_4,
-            self.actuator_outputs.X7_2,
-            self.actuator_outputs.X7_4
+			self.OUT_X0_2,
+			self.OUT_X0_4,
+			self.OUT_X1_2,
+			self.OUT_X1_4,
+			self.OUT_X2_2,
+			self.OUT_X2_4,
+			self.OUT_X3_2,
+			self.OUT_X3_4,
+			self.OUT_X4_2,
+			self.OUT_X4_4,
+			self.OUT_X5_2,
+			self.OUT_X5_4,
+			self.OUT_X6_2,
+			self.OUT_X6_4,
+			self.OUT_X7_2,
+			self.OUT_X7_4
 
-                    ) = digital_outputs_16(
-                        self.plc_ios.inByte1,
-                        self.plc_ios.inByte2,
-                        self.parameters.PinBased,
-                        self.parameters.PortBased,
-                        self.parameters.Compact,
-                    )
-            
+                   ) = digital_outputs_16(
+                       self.inByte1,
+                       self.inByte2,
+                       self.PinBased,
+                       self.PortBased,
+                       self.Compact,
+                   )
+           
 
         def _get_qualifier_di_bytes():
             # Qualifier DI. These outputs from block are connected to PLC
-            (self.qualifier_dis.qualifier_di_8_byte1, self.qualifier_dis.qualifier_di_8_byte2) = (
+            (self.qualifier_di_8_byte1, self.qualifier_di_8_byte2) = (
                 qualifier_di_8(
                     short_circuit_sensor_trigger_as_bits,
-                    self.parameters.PinBased,
-                    self.parameters.PortBased,
-                    self.parameters.Compact,
+                    self.PinBased,
+                    self.PortBased,
+                    self.Compact,
                 )
             )
 
         def _get_qualifier_do_bytes():
             # Qualifier DO.  These outputs from block are connected to PLC
-            (self.qualifier_dos.qualifier_do_8_byte1, self.qualifier_dos.qualifier_do_8_byte2) = (
+            (self.qualifier_do_8_byte1, self.qualifier_do_8_byte2) = (
                 qualifier_do_8(
-                    self.plc_ios.inByte1,
-                    self.plc_ios.inByte2,
+                    self.inByte1,
+                    self.inByte2,
                     short_circuit_actuator_trigger_as_bits,
-                    self.parameters.PinBased,
-                    self.parameters.PortBased,
-                    self.parameters.Compact,
+                    self.PinBased,
+                    self.PortBased,
+                    self.Compact,
                 )
             )
 
         def _get_system_state_bytes():
             # System State. These outputs from block are connected to PLC
             (
-                self.system_state.system_state_byte_1,
-                self.system_state.system_state_byte_2,
-                self.system_state.system_state_byte_3,
-                self.system_state.system_state_byte_4,
+                self.system_state_byte_1,
+                self.system_state_byte_2,
+                self.system_state_byte_3,
+                self.system_state_byte_4,
             ) = System_State(
-                self.qualifier_dis.qualifier_di_8_byte1,
-                self.qualifier_dis.qualifier_di_8_byte2,
-                self.qualifier_dos.qualifier_do_8_byte1,
-                self.qualifier_dos.qualifier_do_8_byte2,
+                self.qualifier_di_8_byte1,
+                self.qualifier_di_8_byte2,
+                self.qualifier_do_8_byte1,
+                self.qualifier_do_8_byte2,
                 False,
                 False,
-                self.user_interface_ios.Sensor_Voltage,
-                self.user_interface_ios.Actuator_Voltage,
+                self.Sensor_Voltage,
+                self.Actuator_Voltage,
             )
 
 
@@ -184,15 +292,15 @@ class MVK55532(Fmi3Slave):
 
         # LED Config behaviour
         (
-            self.user_interface_ios.LED_Green,
-            self.user_interface_ios.LED_Red,
-            self.user_interface_ios.LED_Off,
-        ) = led(self.user_interface_ios.Sensor_Voltage, current_time)
+            self.LED_Green,
+            self.LED_Red,
+            self.LED_Off,
+        ) = led(self.Sensor_Voltage, current_time)
 
         # Short circuit bits for sensor and actuator
         short_circuit_result = short_circuit_trigger(
-            self.user_interface_ios.sensor_short_circuit_trigger_value,
-            self.user_interface_ios.actuator_short_circuit_trigger_value,
+            self.sensor_short_circuit_trigger_value,
+            self.actuator_short_circuit_trigger_value,
         )
         [
             short_circuit_actuator_trigger_as_bits,
@@ -207,503 +315,3 @@ class MVK55532(Fmi3Slave):
 
         return True
 
-class Parameters:
-    """
-    Entity class for Parameters of the Simulation Module
-    """
-
-    def __init__(self):
-        self.PinBased = True
-        self.PortBased = False
-        self.Compact = False
-
-    def register(self, fmi3slave: Fmi3Slave):
-        fmi3slave.register_variable(
-            Boolean(
-                "parameters.PinBased",
-                causality=Fmi3Causality.parameter,
-                variability=Fmi3Variability.tunable,
-                description="Pin based mapping of inputs",
-            )
-        )
-        fmi3slave.register_variable(
-            Boolean(
-                "parameters.PortBased",
-                causality=Fmi3Causality.parameter,
-                variability=Fmi3Variability.tunable,
-                description="Port based mapping of inputs",
-            )
-        )
-        fmi3slave.register_variable(
-            Boolean(
-                "parameters.Compact",
-                causality=Fmi3Causality.parameter,
-                variability=Fmi3Variability.tunable,
-                description="Compact based mapping of inputs",
-            )
-        )
-
-
-
-class SensorInputs:
-    """
-    Entity class for Sensor Inputs
-    """
-    
-    def __init__(self):
-        self.X0_2 = 1
-        self.X0_4 = 1
-        self.X1_2 = 1
-        self.X1_4 = 1
-        self.X2_2 = 1
-        self.X2_4 = 1
-        self.X3_2 = 1
-        self.X3_4 = 1
-        self.X4_2 = 1
-        self.X4_4 = 1
-        self.X5_2 = 1
-        self.X5_4 = 1
-        self.X6_2 = 1
-        self.X6_4 = 1
-        self.X7_2 = 1
-        self.X7_4 = 1
-
-    def register(self, fmi3slave: Fmi3Slave):
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X0_2",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X0_4",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X1_2",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X1_4",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X2_2",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X2_4",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X3_2",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X3_4",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X4_2",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X4_4",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X5_2",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X5_4",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X6_2",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X6_4",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X7_2",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "sensor_inputs.X7_4",
-                causality=Fmi3Causality.input,
-                description="Sensor input",
-            )
-        )
-
-
-class ActuatorOutputs:
-    """
-    Entity class for Actuator Outputs
-    """
-    
-    def __init__(self):
-        self.X0_2 = 1
-        self.X0_4 = 1
-        self.X1_2 = 1
-        self.X1_4 = 1
-        self.X2_2 = 1
-        self.X2_4 = 1
-        self.X3_2 = 1
-        self.X3_4 = 1
-        self.X4_2 = 1
-        self.X4_4 = 1
-        self.X5_2 = 1
-        self.X5_4 = 1
-        self.X6_2 = 1
-        self.X6_4 = 1
-        self.X7_2 = 1
-        self.X7_4 = 1
-
-    def register(self, fmi3slave: Fmi3Slave):
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X0_2",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X0_4",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X1_2",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X1_4",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X2_2",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X2_4",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X3_2",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X3_4",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X4_2",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X4_4",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X5_2",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X5_4",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X6_2",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X6_4",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X7_2",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-        fmi3slave.register_variable(
-                Int32(
-                    "actuator_outputs.X7_4",
-                    causality=Fmi3Causality.output,
-                    description="Actuator output",
-                )
-            )
-
-
-class QualifierDIs:
-    """
-    Entity class for IOs going in and out of PLC
-    """
-
-    def __init__(self):
-        
-        self.qualifier_di_8_byte1 = 0
-        self.qualifier_di_8_byte2 = 0
-        
-        
-    def register(self, fmi3slave: Fmi3Slave):
-  
-        fmi3slave.register_variable(
-            Int32(
-                "qualifier_dis.qualifier_di_8_byte1",
-                causality=Fmi3Causality.output,
-                description="To PLC: shows location of error in the module in inputs",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "qualifier_dis.qualifier_di_8_byte2",
-                causality=Fmi3Causality.output,
-                description="To PLC: shows location of error in the module in inputs",
-            )
-        )
-
-class QualifierDOs:
-    """
-    Entity class for IOs going in and out of PLC
-    """
-
-    def __init__(self):
-        
-        self.qualifier_do_8_byte1 = 0
-        self.qualifier_do_8_byte2 = 0
-        
-
-    def register(self, fmi3slave: Fmi3Slave):
-        fmi3slave.register_variable(
-            Int32(
-                "qualifier_dos.qualifier_do_8_byte1",
-                causality=Fmi3Causality.output,
-                description="To PLC: shows location of error in the module in outputs",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "qualifier_dos.qualifier_do_8_byte2",
-                causality=Fmi3Causality.output,
-                description="To PLC: shows location of error in the module in outputs",
-            )
-        )
-
-class SystemStates:
-    """
-    Entity class for IOs going in and out of PLC
-    """
-
-    def __init__(self):
-        
-        self.system_state_byte_1 = 0
-        self.system_state_byte_2 = 0
-        self.system_state_byte_3 = 0
-        self.system_state_byte_4 = 0
-
-    def register(self, fmi3slave: Fmi3Slave):
-        fmi3slave.register_variable(
-            Int32(
-                "system_state.system_state_byte_1",
-                causality=Fmi3Causality.output,
-                description="To PLC: shows state of the module",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "system_state.system_state_byte_2",
-                causality=Fmi3Causality.output,
-                description="To PLC: shows state of the module",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "system_state.system_state_byte_3",
-                causality=Fmi3Causality.output,
-                description="To PLC: shows state of the module",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "system_state.system_state_byte_4",
-                causality=Fmi3Causality.output,
-                description="To PLC: shows state of the module",
-            )
-        )
-
-class PLCIOs:
-    """
-    Entity class for IOs going in and out of PLC
-    """
-
-    def __init__(self):
-        self.outByte1 = 0
-        self.outByte2 = 0
-        self.inByte1 = 255
-        self.inByte2 = 255
-      
-      
-
-    def register(self, fmi3slave: Fmi3Slave):
-        fmi3slave.register_variable(
-            Int32(
-                "plc_ios.outByte1",
-                causality=Fmi3Causality.output,
-                description="To PLC: Sensor bits converted to Integer",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "plc_ios.outByte2",
-                causality=Fmi3Causality.output,
-                description="To PLC: Sensor bits converted to Integer",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "plc_ios.inByte1",
-                causality=Fmi3Causality.input,
-                description="From PLC: Integer value to set the actuators from the module",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "plc_ios.inByte2",
-                causality=Fmi3Causality.input,
-                description="From PLC: Integer value to set the actuators from the module",
-            )
-        )
-
-class UserInterfaceIOs:
-    """
-    Entity class for User Interface IOs of the Simulation Module
-    """
-
-    def __init__(self):
-        self.Sensor_Voltage = 24.0
-        self.Actuator_Voltage = 24.0
-        self.LED_Off = 0.0
-        self.LED_Red = 0.0
-        self.LED_Green = 0.0
-        self.actuator_short_circuit_trigger_value = 0
-        self.sensor_short_circuit_trigger_value = 0
-
-    def register(self, fmi3slave: Fmi3Slave):
-        fmi3slave.register_variable(
-            Float64("user_interface_ios.Sensor_Voltage", causality=Fmi3Causality.input)
-        )
-        fmi3slave.register_variable(
-            Float64(
-                "user_interface_ios.Actuator_Voltage", causality=Fmi3Causality.input
-            )
-        )
-        fmi3slave.register_variable(
-            Float64("user_interface_ios.LED_Green", causality=Fmi3Causality.output)
-        )
-        fmi3slave.register_variable(
-            Float64("user_interface_ios.LED_Red", causality=Fmi3Causality.output)
-        )
-        fmi3slave.register_variable(
-            Float64("user_interface_ios.LED_Off", causality=Fmi3Causality.output)
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "user_interface_ios.actuator_short_circuit_trigger_value",
-                causality=Fmi3Causality.input,
-                description="Short circuit can be triggered by changing values from 255 to 0-255",
-            )
-        )
-        fmi3slave.register_variable(
-            Int32(
-                "user_interface_ios.sensor_short_circuit_trigger_value",
-                causality=Fmi3Causality.input,
-                description="Actuator circuit can be triggered by changing values from 255 to 0-255",
-            )
-        )

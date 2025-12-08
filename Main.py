@@ -1,10 +1,13 @@
 import tkinter as tk
 from tkinter import filedialog
+
+from AASX.AASXSubModelGenerator import AASXSimulationSubModelGenerator
 from gsdml_parser import parse_component_info
 import json
 from MainDeviceScripts.Genearate import generate_code_from_json
 from MainDeviceScripts.GeneratePythonfile import generate_code_from_json_1
 from AASXSubmodelConnectorsParser import extract_pins_as_major_tags
+from AASX import AASXSubModelGenerator
 import AASXConnectorsData
 from pathlib import Path
 
@@ -28,15 +31,21 @@ def main():
     output_path = component_id+"_output.json"
         #
     output_path_connectors_info = component_id + "_connectors.json"
+
+    output_path_AASXSimulationSubModel = "Simulation_data_" + component_id + ".json"
         #Search for AAS in the Database
     BASE_DIR = Path(__file__).resolve().parent
     DATA_DIR = BASE_DIR / "AASXConnectorsData"  # folder name where JSONs are stored
 
     json_path = DATA_DIR / ("ME_"+ component_id + "_Submodel_TechnicalData"+".json")
 
+    # Extract pin info and save in Json.
     extract_pins_as_major_tags(json_path,  output_path_connectors_info)
 
+
     success = parse_component_info(xml_path, component_id, output_path)
+
+
 
     if success:
         print(f"\nComponent info saved to: {output_path}")
@@ -51,10 +60,14 @@ def main():
         data_connectors = json.load(f)
 
     generated_code = generate_code_from_json_1(data, data_connectors)
+
     if generated_code:
         print("Code generation complete")
     else:
         print("No code generated.")
+
+    # Extract simmulation data and save into AASX Simulation SubModel JSON
+    AASXSimulationSubModelGenerator(data, data_connectors, component_id, output_path_AASXSimulationSubModel)
 
 if __name__ == "__main__":
     main()

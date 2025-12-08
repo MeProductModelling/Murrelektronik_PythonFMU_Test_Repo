@@ -28,7 +28,7 @@ def extract_module_info(modinfo_elem, ns):
     """Extract all contents under ModuleInfo into a dict."""
     return element_to_dict(modinfo_elem, ns)
 
-def parse_component_info(xml_path, component_id, output_path):
+def  parse_component_info(xml_path, component_id, output_path):
     ns = {
         'ns': 'http://www.profibus.com/GSDML/2003/11/DeviceProfile'
     }

@@ -70,8 +70,9 @@ def generate_constructor_1(json_data, di_pins, do_pins):
 
     if len(di_pins) != 0:
         for dis in di_pins:
-            lines.append(f"        self.{dis} = 1\n")
+            lines.append(f"        self.IN_{dis} = 1")
 
+        lines.append(f"\n")
         lines.append(f"        self.qualifier_di_8_byte1 = 0")
         lines.append(f"        self.qualifier_di_8_byte2 = 0\n")
 
@@ -82,8 +83,9 @@ def generate_constructor_1(json_data, di_pins, do_pins):
 
     if len(do_pins) != 0:
         for dos in do_pins:
-            lines.append(f"        self.{dos} = 1\n")
+            lines.append(f"        self.OUT_{dos} = 1")
 
+        lines.append(f"\n")
         lines.append(f"        self.qualifier_do_8_byte1 = 0")
         lines.append(f"        self.qualifier_do_8_byte2 = 0\n")
 
@@ -114,7 +116,7 @@ def generate_constructor_1(json_data, di_pins, do_pins):
 
     if len(di_pins)!= 0:
         for dis in di_pins:
-            lines.append(f"        self.register_variable(Int32('{dis}',causality=Fmi3Causality.input,description='{"Sensor Input"}',))")
+            lines.append(f"        self.register_variable(Int32('IN_{dis}',causality=Fmi3Causality.input,description='{"Sensor Input"}',))")
 
         lines.append(f"\n")
 
@@ -126,7 +128,7 @@ def generate_constructor_1(json_data, di_pins, do_pins):
 
     if len(do_pins) != 0:
         for dos in do_pins:
-            lines.append(f"        self.register_variable(Int32('{dos}',causality=Fmi3Causality.output,description='{"Actuator Output"}',))")
+            lines.append(f"        self.register_variable(Int32('OUT_{dos}',causality=Fmi3Causality.output,description='{"Actuator Output"}',))")
 
         lines.append(f"\n")
 

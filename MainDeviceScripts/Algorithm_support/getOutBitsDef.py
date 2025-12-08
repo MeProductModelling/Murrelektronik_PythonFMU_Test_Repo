@@ -14,9 +14,9 @@ def get_out_bits_to_PLC_from_SMBlock(outputs):
         for pins in outputs:
             counter += 1
             if pins != 0 and pins != "0" and counter != len(outputs):
-                out_2 += "\t" + "\t" + "\t" + "self." + pins + "," + "\n"
+                out_2 += "\t" + "\t" + "\t" + "self.OUT_" + pins + "," + "\n"
             if pins != 0 and pins != "0" and counter == len(outputs):
-                out_2 += "\t" + "\t" + "\t" + "self." + pins + "\n"
+                out_2 += "\t" + "\t" + "\t" + "self.OUT_" + pins + "\n"
 
        # for pins in outputs:
        #     counter += 1
@@ -60,9 +60,9 @@ def get_out_bits_to_PLC_from_SMBlock(outputs):
         for pins in outputs:
             counter += 1
             if pins != 0 and pins != "0" and counter != len(outputs):
-                out_2 += "\t" + "\t" + "\t" + "self." + pins + "," + "\n"
+                out_2 += "\t" + "\t" + "\t" + "self.OUT_" + pins + "," + "\n"
             if pins != 0 and pins != "0" and counter == len(outputs):
-                out_2 += "\t" + "\t" + "\t" + "self." + pins + "\n"
+                out_2 += "\t" + "\t" + "\t" + "self.OUT_" + pins + "\n"
 
        # for pins in outputs:
        #     counter += 1

@@ -30,10 +30,10 @@ def get_out_bytes_to_PLC_from_SMBlock (inputs):
         for pins in inputs:
             counter += 1
             if pins != 0 and pins != "0" and counter != len(inputs):
-                out_2 += "\t" +"\t"+"\t"+"\t"+ "\t"+"self." + pins + "," + "\n"
+                out_2 += "\t" +"\t"+"\t"+"\t"+ "\t"+"self.IN_" + pins + "," + "\n"
 
             if pins != 0 and pins != "0" and counter == len(inputs):
-                out_2 += "\t" + "\t" + "\t" + "\t" + "\t" + "self." + pins + "\n"
+                out_2 += "\t" + "\t" + "\t" + "\t" + "\t" + "self.IN_" + pins + "\n"
 
        #for pins in inputs:
        #    counter += 1
@@ -89,9 +89,9 @@ def get_out_bytes_to_PLC_from_SMBlock (inputs):
         for pins in inputs:
             counter += 1
             if pins != 0 and pins != "0" and counter != len(inputs):
-                out_2 +=  "\t" + "\t" + "\t" + "\t" + "\t" + "self."  + pins +  "," +"\n"
+                out_2 +=  "\t" + "\t" + "\t" + "\t" + "\t" + "self.IN_"  + pins +  "," +"\n"
             if pins != 0 and pins != "0" and counter == len(inputs):
-                out_2 += "\t" + "\t" + "\t" + "\t" + "\t" + "self." + pins + "\n"
+                out_2 += "\t" + "\t" + "\t" + "\t" + "\t" + "self.IN_" + pins + "\n"
 
         #for pins in inputs:
         #    counter += 1

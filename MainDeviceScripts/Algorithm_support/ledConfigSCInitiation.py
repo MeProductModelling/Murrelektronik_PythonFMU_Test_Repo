@@ -49,16 +49,16 @@ def led_SC_Initialisation(di_pins, do_pins, qualifier_dis, qualifier_dos):
    #     ] = short_circuit_result''' + "\n" + "\n"
 
     if qualifier_dis and qualifier_dos:
-        output += "\t" + "\t"+"_get_qualifier_di_bytes()" + "\n"+ "\n" + "\t" + "\t"+"_get_qualifier_do_bytes()"+ "\n"+ "\n"
+        output += "        _get_qualifier_di_bytes()" + "\n"+ "\n" +"        _get_qualifier_do_bytes()"+ "\n"+ "\n"
     elif qualifier_dis:
-        output += "\t" + "\t"+"_get_qualifier_di_bytes()"+ "\n"+ "\n"
+        output += "        _get_qualifier_di_bytes()"+ "\n"+ "\n"
     elif qualifier_dos:
-        output += "\t" + "\t"+"_get_qualifier_do_bytes()"+ "\n"+ "\n"
+        output += "        _get_qualifier_do_bytes()"+ "\n"+ "\n"
 
 
 
-    output +=  "\t" + "\t"+"_get_system_state_bytes()"+ "\n"+ "\n"
+    output +=  "        _get_system_state_bytes()"+ "\n"+ "\n"
 
-    output += "\t" + "\t" + "return True"
+    output +=  "        return True"
 
     return output
