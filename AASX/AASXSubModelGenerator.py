@@ -26,10 +26,9 @@ def AASXSimulationSubModelGenerator (data, data_connectors,Component_Id, Output_
 
     SimModManufacturerInformation ={
         "Company": "Murrelektronik",
-        "Language01": "Deutsch",
+        "Language": ["Deutsch","English"],
         "Email": Email,
-        "Phone": Phone,
-        "Language02": "English"
+        "Phone": Phone
     }
 
     ModelFileVersion ={

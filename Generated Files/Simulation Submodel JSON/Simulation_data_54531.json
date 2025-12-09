@@ -53,7 +53,10 @@
       "DefaultSimTime": "100.00",
       "SimModManufacturerInformation": {
         "Company": "Murrelektronik",
-        "Language01": "Deutsch",
+        "Language": [
+          "Deutsch",
+          "English"
+        ],
         "Email": {
           "TypeOfEmailAddress": "@murr.services",
           "EmailAddress": "rajkumar.pulparthi@murr.services",
@@ -64,8 +67,7 @@
           "TypeOfTelephone": "TBD",
           "TelephoneNumber": "TBD",
           "AvailableTime": "TBD"
-        },
-        "Language02": "English"
+        }
       },
       "Ports": {
         "PortsConnector": [
