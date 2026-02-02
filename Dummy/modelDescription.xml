@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription fmiVersion="3.0" modelName="Dummy" instantiationToken="0749e502-bae7-11f0-a718-bc6ee2cec15c" generationTool="PythonFMU3 0.2.2" generationDateAndTime="2025-11-06T08:03:07+00:00" variableNamingConvention="structured" description="A simple description of DIO 8 module from Murrelektronik catalogue" author="Raj Kumar">
+	<CoSimulation needsExecutionTool="true" canHandleVariableCommunicationStepSize="true" canBeInstantiatedOnlyOncePerProcess="false" canGetAndSetFMUState="false" canSerializeFMUState="false" modelIdentifier="Dummy" canNotUseMemoryManagementFunctions="true"/>
+	<LogCategories>
+		<Category name="logStatusWarning" description="Log messages with fmi3Warning status."/>
+		<Category name="logStatusDiscard" description="Log messages with fmi3Discard status."/>
+		<Category name="logStatusError" description="Log messages with fmi3Error status."/>
+		<Category name="logStatusFatal" description="Log messages with fmi3Fatal status."/>
+		<Category name="logAll" description="Log all messages."/>
+	</LogCategories>
+	<ModelVariables>
+		<Boolean name="PinBased" valueReference="0" description="Pin based mapping of inputs" causality="parameter" variability="tunable" start="true"/>
+		<Boolean name="PortBased" valueReference="1" description="Port based mapping of inputs" causality="parameter" variability="tunable" start="false"/>
+		<Boolean name="Compact" valueReference="2" description="Compact based mapping of inputs" causality="parameter" variability="tunable" start="false"/>
+		<Int32 name="X4_2" valueReference="3" description="Sensor input" causality="input" start="1"/>
+		<Int32 name="X4_4" valueReference="4" description="Sensor input" causality="input" start="1"/>
+		<Int32 name="X5_2" valueReference="5" description="Sensor input" causality="input" start="1"/>
+		<Int32 name="X5_4" valueReference="6" description="Sensor input" causality="input" start="1"/>
+		<Int32 name="X6_2" valueReference="7" description="Sensor input" causality="input" start="1"/>
+		<Int32 name="X6_4" valueReference="8" description="Sensor input" causality="input" start="1"/>
+		<Int32 name="X7_2" valueReference="9" description="Sensor input" causality="input" start="1"/>
+		<Int32 name="X7_4" valueReference="10" description="Sensor input" causality="input" start="1"/>
+		<Int32 name="X0_2" valueReference="11" description="Actuator output" causality="output"/>
+		<Int32 name="X0_4" valueReference="12" description="Actuator output" causality="output"/>
+		<Int32 name="X1_2" valueReference="13" description="Actuator output" causality="output"/>
+		<Int32 name="X1_4" valueReference="14" description="Actuator output" causality="output"/>
+		<Int32 name="X2_2" valueReference="15" description="Actuator output" causality="output"/>
+		<Int32 name="X2_4" valueReference="16" description="Actuator output" causality="output"/>
+		<Int32 name="X3_2" valueReference="17" description="Actuator output" causality="output"/>
+		<Int32 name="X3_4" valueReference="18" description="Actuator output" causality="output"/>
+		<Int32 name="qualifier_di_8_byte1" valueReference="19" description="To PLC: shows location of error in the module in inputs" causality="output"/>
+		<Int32 name="qualifier_di_8_byte2" valueReference="20" description="To PLC: shows location of error in the module in inputs" causality="output"/>
+		<Int32 name="qualifier_do_8_byte1" valueReference="21" description="To PLC: shows location of error in the module in outputs" causality="output"/>
+		<Int32 name="qualifier_do_8_byte2" valueReference="22" description="To PLC: shows location of error in the module in outputs" causality="output"/>
+		<Int32 name="system_state_byte_1" valueReference="23" description="To PLC: shows state of the module" causality="output"/>
+		<Int32 name="system_state_byte_2" valueReference="24" description="To PLC: shows state of the module" causality="output"/>
+		<Int32 name="system_state_byte_3" valueReference="25" description="To PLC: shows state of the module" causality="output"/>
+		<Int32 name="system_state_byte_4" valueReference="26" description="To PLC: shows state of the module" causality="output"/>
+		<Int32 name="inByte1" valueReference="27" description="From PLC: Integer value to set the actuators from the module" causality="input" start="255"/>
+		<Int32 name="inByte2" valueReference="28" description="From PLC: Integer value to set the actuators from the module" causality="input" start="255"/>
+		<Int32 name="outByte1" valueReference="29" description="To PLC: Sensor bits converted to Integer" causality="output"/>
+		<Int32 name="outByte2" valueReference="30" description="To PLC: Sensor bits converted to Integer" causality="output"/>
+		<Float64 name="Sensor_Voltage" valueReference="31" causality="input" start="24"/>
+		<Float64 name="Actuator_Voltage" valueReference="32" causality="input" start="24"/>
+		<Int32 name="actuator_short_circuit_trigger_value" valueReference="33" description="Short circuit can be triggered by changing values from 255 to 0-255" causality="input" start="0"/>
+		<Int32 name="sensor_short_circuit_trigger_value" valueReference="34" description="Actuator circuit can be triggered by changing values from 255 to 0-255" causality="input" start="0"/>
+		<Int32 name="LED_Green" valueReference="35" causality="output"/>
+		<Int32 name="LED_Red" valueReference="36" causality="output"/>
+		<Int32 name="LED_Off" valueReference="37" causality="output"/>
+		<Float64 name="time" valueReference="38" causality="independent"/>
+	</ModelVariables>
+	<ModelStructure>
+		<Output valueReference="11"/>
+		<Output valueReference="12"/>
+		<Output valueReference="13"/>
+		<Output valueReference="14"/>
+		<Output valueReference="15"/>
+		<Output valueReference="16"/>
+		<Output valueReference="17"/>
+		<Output valueReference="18"/>
+		<Output valueReference="19"/>
+		<Output valueReference="20"/>
+		<Output valueReference="21"/>
+		<Output valueReference="22"/>
+		<Output valueReference="23"/>
+		<Output valueReference="24"/>
+		<Output valueReference="25"/>
+		<Output valueReference="26"/>
+		<Output valueReference="29"/>
+		<Output valueReference="30"/>
+		<Output valueReference="35"/>
+		<Output valueReference="36"/>
+		<Output valueReference="37"/>
+		<InitialUnknown valueReference="11"/>
+		<InitialUnknown valueReference="12"/>
+		<InitialUnknown valueReference="13"/>
+		<InitialUnknown valueReference="14"/>
+		<InitialUnknown valueReference="15"/>
+		<InitialUnknown valueReference="16"/>
+		<InitialUnknown valueReference="17"/>
+		<InitialUnknown valueReference="18"/>
+		<InitialUnknown valueReference="19"/>
+		<InitialUnknown valueReference="20"/>
+		<InitialUnknown valueReference="21"/>
+		<InitialUnknown valueReference="22"/>
+		<InitialUnknown valueReference="23"/>
+		<InitialUnknown valueReference="24"/>
+		<InitialUnknown valueReference="25"/>
+		<InitialUnknown valueReference="26"/>
+		<InitialUnknown valueReference="29"/>
+		<InitialUnknown valueReference="30"/>
+		<InitialUnknown valueReference="35"/>
+		<InitialUnknown valueReference="36"/>
+		<InitialUnknown valueReference="37"/>
+	</ModelStructure>
+</fmiModelDescription>

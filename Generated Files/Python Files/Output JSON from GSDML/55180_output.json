@@ -1,0 +1,139 @@
+{
+    "DeviceAccessPointItem": {
+        "ID": "55180",
+        "ModuleIdentNumber": "0xD78C",
+        "DNS_CompatibleName": "MVK-MPNIO",
+        "PhysicalSlots": "0..2",
+        "MinDeviceInterval": "8",
+        "ImplementationType": "netX",
+        "FixedInSlots": "0",
+        "ObjectUUID_LocalIndex": "1",
+        "PowerOnToCommReady": "500",
+        "ParameterizationSpeedupSupported": "true",
+        "MultipleWriteSupported": "true",
+        "DeviceAccessSupported": "true",
+        "NumberOfDeviceAccessAR": "1",
+        "NameOfStationNotTransferable": "true",
+        "PNIO_Version": "V2.33",
+        "SharedDeviceSupported": "true",
+        "SharedInputSupported": "false",
+        "AddressAssignment": "DCP",
+        "LLDP_NoD_Supported": "true",
+        "PrmBeginPrmEndSequenceSupported": "false",
+        "CheckDeviceID_Allowed": "true",
+        "ResetToFactoryModes": "2",
+        "PROFIenergyASE_Supported": "true"
+    },
+    "ModuleInfo": {
+        "@attributes": {
+            "CategoryRef": "Category_V50"
+        },
+        "Name": {
+            "@attributes": {
+                "TextId": "MVK_V50 55180 DIO16 M12L 5P"
+            }
+        },
+        "InfoText": {
+            "@attributes": {
+                "TextId": "PROFINET IO module with 16 digital multifunctional signals, IP67 protection type M12"
+            }
+        },
+        "Family": {
+            "@attributes": {
+                "MainFamily": "I/O",
+                "ProductFamily": "MVK-MPNIO"
+            }
+        },
+        "VendorName": {
+            "@attributes": {
+                "Value": "Murrelektronik"
+            }
+        },
+        "OrderNumber": {
+            "@attributes": {
+                "Value": "55180"
+            }
+        },
+        "HardwareRelease": {
+            "@attributes": {
+                "Value": "2.00"
+            }
+        },
+        "SoftwareRelease": {
+            "@attributes": {
+                "Value": "1.10.00"
+            }
+        }
+    },
+    "UseableModules": [
+        {
+            "ModuleItemTarget": "DIO_MASTER",
+            "FixedInSlots": "1"
+        },
+        {
+            "ModuleItemTarget": "DIO_SHARED",
+            "AllowedInSlots": "2..2"
+        }
+    ],
+    "ResolvedModuleItems": {
+        "DIO_MASTER": {
+            "SubmoduleItems": [
+                {
+                    "ID": "10",
+                    "Name": "Parameters/Diagnosis",
+                    "Description": "Virtual module used for global parameters and diagnosis"
+                },
+                {
+                    "ID": "11",
+                    "Name": "Digital IO",
+                    "Description": "Reserves two byte for digital io"
+                },
+                {
+                    "ID": "12",
+                    "Name": "Qualifier Digital Input",
+                    "Description": "Reserves two byte for input qualifier"
+                },
+                {
+                    "ID": "13",
+                    "Name": "Qualifier Digital Output",
+                    "Description": "Reserves two byte for output qualifier"
+                },
+                {
+                    "ID": "14",
+                    "Name": "System state",
+                    "Description": "Virtual module with system state information"
+                }
+            ]
+        },
+        "DIO_SHARED": {
+            "SubmoduleItems": [
+                {
+                    "ID": "20",
+                    "Name": "Parameters/Diagnosis",
+                    "Description": "Virtual module used for global parameters and diagnosis"
+                },
+                {
+                    "ID": "21",
+                    "Name": "Digital IO",
+                    "Description": "Reserves four byte for digital io"
+                },
+                {
+                    "ID": "22",
+                    "Name": "Qualifier Digital Input",
+                    "Description": "Reserves two byte for input qualifier"
+                },
+                {
+                    "ID": "23",
+                    "Name": "Qualifier Digital Output",
+                    "Description": "Reserves two byte for output qualifier"
+                },
+                {
+                    "ID": "24",
+                    "Name": "System state",
+                    "Description": "Virtual module with system state information"
+                }
+            ]
+        }
+    },
+    "ParameterRecordDataItem": []
+}

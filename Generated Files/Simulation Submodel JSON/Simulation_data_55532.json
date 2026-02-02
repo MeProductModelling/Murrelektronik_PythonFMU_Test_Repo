@@ -1,0 +1,792 @@
+{
+  "SimulationModels": {
+    "SimulationModel": {
+      "Summary": {
+        "en": "MVK55532.fmu is a behaviour model of a I/O device from Murrelektronik. This device exchanges data between field devices and PLC."
+      },
+      "Simpurpose": {
+        "PosSimPurpose": "Virtual Commissioning",
+        "NegSimPurpose": "(Note: Mandatory field)"
+      },
+      "TypeOfModel": "Linear model",
+      "ScopeOfModel": "Behaviour",
+      "LicenseModel": "Not defined",
+      "EngineeringDomain": "Data Transfer",
+      "Environment": {
+        "OperatingSystem": "Windows 10 64-bit",
+        "ToolEnvironment": "FMPy, SIMULINK, ISG-Virtuos, FEE SCREEN SIM",
+        "VisualizationInformation": "No visualisations are integrated in this model",
+        "SimulationTool": {
+          "SimToolName": "FMPy 0.3.22",
+          "DependencySimTool": "Python shall be installed on the target",
+          "Compiler": "(Note: Mandatory field)",
+          "SolverAndTolerances": {
+            "StepSizeControlNeeded": "false",
+            "FixedStepSize": "0.001",
+            "StiffSolverNeeded": "false",
+            "SolverIncluded": "true",
+            "TestedToolSolverAlgorithm": {
+              "SolverAlgorithm": "FMU created using PythonFMU 3.0 and tested in FMPy",
+              "ToolSolverFurtherDescription": "To simulate the FMU in different",
+              "Tolerance": "0.0"
+            }
+          }
+        }
+      },
+      "RefSimDocumentation": "/aasx/files/MVK_55532_Python_FMU.pdf",
+      "ModelFile": {
+        "ModelFileType": "FMI 3.0 Co-Simulation",
+        "ModelFileVersion": {
+          "ModelVersionId": "V1.0",
+          "ModelPreviewImage": "/aasx/files/MVK55532.png",
+          "DigitalFile": "/aasx/files/MVK55532.fmu",
+          "ModelFileReleaseNotesTxt": {
+            "en": "This is version V1.0 of the MVK55532 from Murrelektornik I / O component catalogue."
+          },
+          "ModelFileReleaseNotesFile": "(Note: Mandatory field)"
+        }
+      },
+      "ParamMethod": "Pre-Parameterised",
+      "ParamFile": "Not needed",
+      "InitStateMethod": "(Note: Mandatory field)",
+      "InitStateFile": "Not needed",
+      "DefaultSimTime": "100.00",
+      "SimModManufacturerInformation": {
+        "Company": "Murrelektronik",
+        "Language": [
+          "Deutsch",
+          "English"
+        ],
+        "Email": {
+          "TypeOfEmailAddress": "@murr.services",
+          "EmailAddress": "rajkumar.pulparthi@murr.services",
+          "TypeOfPublicKey": "Not defined",
+          "PublicKey": "Not defined"
+        },
+        "Phone": {
+          "TypeOfTelephone": "TBD",
+          "TelephoneNumber": "TBD",
+          "AvailableTime": "TBD"
+        }
+      },
+      "Ports": {
+        "PortsConnector": [
+          {
+            "PortConnectorName": "IN_X0_2",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X0_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X0_4",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X0_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X1_2",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X1_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X1_4",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X1_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X2_2",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X2_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X2_4",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X2_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X3_2",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X3_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X3_4",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X3_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X4_2",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X4_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X4_4",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X4_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X5_2",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X5_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X5_4",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X5_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X6_2",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X6_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X6_4",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X6_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X7_2",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X7_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "IN_X7_4",
+            "PortConDescription": "Sensor Input",
+            "Variable": {
+              "VariableName": "IN_X7_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Sensor Input",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "qualifier_di_Byte_1",
+            "PortConDescription": "qualifier value of inputs from Simulation Block to PLC",
+            "Variable": {
+              "VariableName": "qualifier_di_Byte_1",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "qualifier value of inputs from Simulation Block to PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "qualifier_di_Byte_2",
+            "PortConDescription": "qualifier value of inputs from Simulation Block to PLC",
+            "Variable": {
+              "VariableName": "qualifier_di_Byte_2",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "qualifier value of inputs from Simulation Block to PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "outByte1",
+            "PortConDescription": "Value from Simulation Block to PLC sensors in Simulation environment are controlled by PLC",
+            "Variable": {
+              "VariableName": "outByte1",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "Value from Simulation Block to PLC sensors in Simulation environment are controlled by PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "outByte2",
+            "PortConDescription": "Value from Simulation Block to PLC sensors in Simulation environment are controlled by PLC",
+            "Variable": {
+              "VariableName": "outByte2",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "Value from Simulation Block to PLC sensors in Simulation environment are controlled by PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X0_2",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X0_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X0_4",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X0_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X1_2",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X1_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X1_4",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X1_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X2_2",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X2_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X2_4",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X2_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X3_2",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X3_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X3_4",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X3_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X4_2",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X4_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X4_4",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X4_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X5_2",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X5_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X5_4",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X5_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X6_2",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X6_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X6_4",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X6_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X7_2",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X7_2",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "OUT_X7_4",
+            "PortConDescription": "Actuator Output",
+            "Variable": {
+              "VariableName": "OUT_X7_4",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "Actuator Output",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "qualifier_do_Byte_1",
+            "PortConDescription": "qualifier value of outputs from Simulation Block to PLC",
+            "Variable": {
+              "VariableName": "qualifier_do_Byte_1",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "qualifier value of outputs from Simulation Block to PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "qualifier_do_Byte_2",
+            "PortConDescription": "qualifier value of outputs from Simulation Block to PLC",
+            "Variable": {
+              "VariableName": "qualifier_do_Byte_2",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "qualifier value of outputs from Simulation Block to PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "inByte1",
+            "PortConDescription": "Value from PLC to Simulation Block to control actuators in Simulation environment",
+            "Variable": {
+              "VariableName": "inByte1",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "Value from PLC to Simulation Block to control actuators in Simulation environment",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "inByte2",
+            "PortConDescription": "Value from PLC to Simulation Block to control actuators in Simulation environment",
+            "Variable": {
+              "VariableName": "inByte2",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "Value from PLC to Simulation Block to control actuators in Simulation environment",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "SystemState1",
+            "PortConDescription": "state of the device value from Simulation Block to PLC",
+            "Variable": {
+              "VariableName": "SystemState1",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "state of the device value from Simulation Block to PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "SystemState2",
+            "PortConDescription": "state of the device value from Simulation Block to PLC",
+            "Variable": {
+              "VariableName": "SystemState2",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "state of the device value from Simulation Block to PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "SystemState3",
+            "PortConDescription": "state of the device value from Simulation Block to PLC",
+            "Variable": {
+              "VariableName": "SystemState3",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "state of the device value from Simulation Block to PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "SystemState4",
+            "PortConDescription": "state of the device value from Simulation Block to PLC",
+            "Variable": {
+              "VariableName": "SystemState4",
+              "Range": "0 to 255",
+              "VariableType": "Integer",
+              "VariableDescription": "state of the device value from Simulation Block to PLC",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "Sensor_Voltage",
+            "PortConDescription": "User Interface Control to test the simulation block behaviour on change of voltage",
+            "Variable": {
+              "VariableName": "Sensor_Voltage",
+              "Range": "0 to 50",
+              "VariableType": "Double",
+              "VariableDescription": "User Interface Control to test the simulation block behaviour on change of voltage",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "Actuator_Voltage",
+            "PortConDescription": "User Interface Control to test the simulation block behaviour on change of voltage",
+            "Variable": {
+              "VariableName": "Actuator_Voltage",
+              "Range": "0 to 50",
+              "VariableType": "Double",
+              "VariableDescription": "User Interface Control to test the simulation block behaviour on change of voltage",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "actuator_short_circuit_trigger_value",
+            "PortConDescription": "User Interface Control to test the simulation block behaviour on triggering error on actuators ",
+            "Variable": {
+              "VariableName": "actuator_short_circuit_trigger_value",
+              "Range": "0 to 255",
+              "VariableType": "Double",
+              "VariableDescription": "User Interface Control to test the simulation block behaviour on triggering error on actuators ",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "sensor_short_circuit_trigger_value",
+            "PortConDescription": "User Interface Control to test the simulation block behaviour on change of Sensor voltage",
+            "Variable": {
+              "VariableName": "sensor_short_circuit_trigger_value",
+              "Range": "0 to 255",
+              "VariableType": "Double",
+              "VariableDescription": "User Interface Control to test the simulation block behaviour on change of Sensor voltage",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Input",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "LED_Green",
+            "PortConDescription": "LEDs of the device",
+            "Variable": {
+              "VariableName": "LED_Green",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "LEDs of the device",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "LED_Red",
+            "PortConDescription": "LEDs of the device",
+            "Variable": {
+              "VariableName": "LED_Red",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "LEDs of the device",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          },
+          {
+            "PortConnectorName": "LED_Off",
+            "PortConDescription": "LEDs of the device",
+            "Variable": {
+              "VariableName": "LED_Off",
+              "Range": "0 to 1",
+              "VariableType": "Integer",
+              "VariableDescription": "LEDs of the device",
+              "UnitList": "TBD",
+              "UnitDescription": "TBD",
+              "VariableCausality": "Output",
+              "VariablePrefix": "TBD"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

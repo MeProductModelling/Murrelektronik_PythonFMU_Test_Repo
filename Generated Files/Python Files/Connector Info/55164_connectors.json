@@ -1,0 +1,46 @@
+{
+    "X0": {
+        "PIN 2": "DO (UA)",
+        "PIN 4": "DO (UA)"
+    },
+    "X1": {
+        "PIN 2": "DO (UA)",
+        "PIN 4": "DO (UA)"
+    },
+    "X2": {
+        "PIN 2": "DO (UA)",
+        "PIN 4": "DO (UA)"
+    },
+    "X3": {
+        "PIN 2": "DO (UA)",
+        "PIN 4": "DO (UA)"
+    },
+    "X4": {
+        "PIN 2": "DI",
+        "PIN 4": "DI"
+    },
+    "X5": {
+        "PIN 2": "DI",
+        "PIN 4": "DI"
+    },
+    "X6": {
+        "PIN 2": "DI",
+        "PIN 4": "DI"
+    },
+    "X7": {
+        "PIN 2": "DI",
+        "PIN 4": "DI"
+    },
+    "XD1": {
+        "PIN 2": "0 V",
+        "PIN 4": "24 V DC (UA)"
+    },
+    "XD2": {
+        "PIN 2": "0 V (UA)",
+        "PIN 4": "24 V DC (UA)"
+    },
+    "XF2": {
+        "PIN 2": "RD +",
+        "PIN 4": "RD -"
+    }
+}
