@@ -12,11 +12,18 @@ def digital_inputs_16(bits, pinBased, portBased, compact):
     """
 
     if len(bits) != 16:
-        raise ValueError("Input must be a list of exactly 16 bits (0s and 1s).")
+        raise ValueError("### Error Code: 5 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Inputs Library ### "
+                         "### Error Description: Input must be 16 bits (0s and 1s). ###     ")
 
     # Ensure only one mapping type is selected
     if sum([pinBased, portBased, compact]) != 1:
-        raise ValueError("Exactly one mapping type must be selected")
+        raise ValueError("### Error Code: 3 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Inputs Library ### "
+                         "### Error Description: Two or more types of IO mappings are selected or none are selected. ### "
+                         "### Error Resolve: Change one of the pinBased or portBased or compactBased Parameter to True and remaining value to False ###")
 
     byte1 = 0
     byte2 = 0
@@ -31,12 +38,18 @@ def digital_inputs_16(bits, pinBased, portBased, compact):
 
         for i, bit in enumerate(bitsforbyte1):
             if bit not in (0, 1):
-                raise ValueError("Each bit must be either 0 or 1.")
+                raise ValueError("### Error Code: 4 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
             byte1 |= bit << (7 - i)
 
         for i, bit in enumerate(bitsforbyte2):
             if bit not in (0, 1):
-                raise ValueError("Each bit must be either 0 or 1.")
+                raise ValueError("### Error Code: 4 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
             byte2 |= bit << (7 - i)
 
     elif portBased:
@@ -49,13 +62,19 @@ def digital_inputs_16(bits, pinBased, portBased, compact):
         for i in range(8):
             bit = bits_swapped[i]
             if bit not in (0, 1):
-                raise ValueError("Each bit must be either 0 or 1.")
+                raise ValueError("### Error Code: 4 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
             byte1 |= bit << (7 - i)
 
         for i in range(8, 16):
             bit = bits_swapped[i]
             if bit not in (0, 1):
-                raise ValueError("Each bit must be either 0 or 1.")
+                raise ValueError("### Error Code: 4 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
             byte2 |= bit << (15 - i)
 
     elif compact:
@@ -68,13 +87,19 @@ def digital_inputs_16(bits, pinBased, portBased, compact):
         for i in range(8):
             bit = bits_swapped[i]
             if bit not in (0, 1):
-                raise ValueError("Each bit must be either 0 or 1.")
+                raise ValueError("### Error Code: 4 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
             byte1 |= bit << (7 - i)
 
         for i in range(8, 16):
             bit = bits_swapped[i]
             if bit not in (0, 1):
-                raise ValueError("Each bit must be either 0 or 1.")
+                raise ValueError("### Error Code: 4 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
             byte2 |= bit << (15 - i)
 
     return np.array([byte1, byte2])

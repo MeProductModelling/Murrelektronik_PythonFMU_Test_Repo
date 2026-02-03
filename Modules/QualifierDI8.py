@@ -32,14 +32,20 @@ def qualifier_di_8(
             )  # even bits from position[6,4,2,0]
             for i, bit in enumerate(bitsforbyte1):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DI Library ### "
+                         "### Error Description: Each bit must be either 0 or 1. ###     ")
                 qualifier_di_byte1 |= bit << (
                     7 - i
                 )  # Shift the bit to its correct position
 
             for i, bit in enumerate(bitsforbyte2):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DI Library ### "
+                         "### Error Description: Each bit must be either 0 or 1. ###     ")
                 qualifier_di_byte2 |= bit << (
                     7 - i
                 )  # Shift the bit to its correct position
@@ -61,7 +67,10 @@ def qualifier_di_8(
             )
             for j, bit in enumerate(bits):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DI Library ### "
+                         "### Error Description: Each bit must be either 0 or 1. ###     ")
                 qualifier_di_byte2 |= bit << (
                     7 - j
                 )  # Shift the bit to its correct position
@@ -83,18 +92,26 @@ def qualifier_di_8(
             )
             for k, bit in enumerate(bits):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DI Library ### "
+                         "### Error Description: Each bit must be either 0 or 1. ###     ")
                 qualifier_di_byte1 |= bit << (
                     7 - k
                 )  # Shift the bit to its correct position
 
         else:
-            raise ValueError(
-                "Two ore more values are set as True or none are set as True"
-            )
+            raise ValueError("### Error Code: 8 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DI Library ### "
+                         "### Error Description: Change one of the pinBased or portBased or compactBased Parameter to True and remaining value to False. ###     "
+               )
 
     else:
-        raise ValueError("Input must be a list of exactly 8 bits (0s and 1s).")
+        raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DI Library ### "
+                         "### Error Description: Input must be a list of exactly 8 bits (0s and 1s). ###     ")
 
     bytes = np.array([qualifier_di_byte1, qualifier_di_byte2])
 

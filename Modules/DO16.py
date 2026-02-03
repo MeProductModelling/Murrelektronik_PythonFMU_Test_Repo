@@ -13,10 +13,16 @@ def digital_outputs_16(byte1, byte2, pinBased, portBased, compact):
     """
 
     if not (0 <= byte1 <= 255 and 0 <= byte2 <= 255):
-        raise ValueError("Inputs must be bytes in the range 0–255.")
+        raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Outputs Library ### "
+                         "### Error Description: Inputs from PLC to FMU must be bytes in the range 0–255. ###     ")
 
     if sum([pinBased, portBased, compact]) != 1:
-        raise ValueError("Exactly one mapping type must be selected.")
+        raise ValueError("### Error Code: 8 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 16 Digital Outputs Library ### "
+                         "### Error Description: Change one of the pinBased or portBased or compactBased Parameter to True and remaining value to False. ###     ")
 
     # Convert both bytes into bit arrays (MSB to LSB)
     bits1 = [(byte1 >> i) & 1 for i in range(7, -1, -1)]

@@ -26,12 +26,18 @@ def digital_inputs(bits, pinBased, portBased, compact):  # This function is test
 
             for i, bit in enumerate(bitsforbyte1):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 1 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 8 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
                 byte1 |= bit << (7 - i)  # Shift the bit to its correct position
 
             for i, bit in enumerate(bitsforbyte2):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 1 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 8 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
                 byte2 |= bit << (7 - i)  # Shift the bit to its correct position
 
         elif pinBased == False and portBased == True and compact == False:
@@ -49,7 +55,10 @@ def digital_inputs(bits, pinBased, portBased, compact):  # This function is test
             )
             for j, bit in enumerate(bits):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 1 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 8 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
                 byte2 |= bit << (7 - j)  # Shift the bit to its correct position
 
         elif pinBased == False and portBased == False and compact == True:
@@ -68,16 +77,27 @@ def digital_inputs(bits, pinBased, portBased, compact):  # This function is test
 
             for k, bit in enumerate(bits):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 1 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 8 Digital Inputs Library ### "
+                         "### Error Description: Input values must be either 0 or 1 ###     ")
                 byte1 |= bit << (7 - k)  # Shift the bit to its correct position
 
         else:
-            raise ValueError(
-                "Two or more types of IO mappings are selected or none are selected"
-            )
+            raise ValueError("### Error Code: 3 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 8 Digital Inputs Library ### "
+                         "### Error Description: Two or more types of IO mappings are selected or none are selected. ### "
+                         "### Error Resolve: Change one of the pinBased or portBased or compactBased Parameter to True and remaining value to False ###"
+                )
 
     else:
-        raise ValueError("Input must be a list of exactly 8 bits (0s and 1s).")
+        raise ValueError("### Error Code: 2 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 8 Digital Inputs Library ### "
+                         "### Error Description: Inputs are either not connected or left empty. ### "
+                         "### Error Resolve: Either connect the input to a sensor or add a value of 0. ### "
+                         )
 
     bytes = np.array([byte1, byte2])
 

@@ -71,10 +71,18 @@ def digital_outputs(
 
         else:
             raise ValueError(
-                "Two or more output mapping are selected or noone is selected"
+                "### Error Code: 6 ### "
+                "### Error Device: Murrelektronik_Module_MVK ### "
+                "### Error Location: 8 Digital Outputs Library ### "
+                "### Error Description: Two or more types of IO mappings are selected or none are selected. ### "
+                "### Error Resolve: Change one of the pinBased or portBased or compactBased Parameter to True and remaining value to False ###"
             )
 
     else:
-        raise ValueError("Input must be a single byte (0-255).")
+        raise ValueError("### Error Code: 3 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: 8 Digital Outputs Library ### "
+                         "### Error Description: Input from PLC must be a value between 0-255. ### "
+                         )
 
     return bits

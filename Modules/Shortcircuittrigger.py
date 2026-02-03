@@ -19,14 +19,20 @@ def short_circuit_trigger(Sensor_short_circuit_trigger, Actuator_short_circuit_t
             (Sensor_short_circuit_trigger >> i) & 1 for i in range(7, -1, -1)
         ]
     else:
-        raise ValueError("Sensor short circuit value should be between 0 - 255.")
+        raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Short circuit trigger Library ### "
+                         "### Error Description: Sensor short circuit value should be between 0 - 255. ###     ")
 
     if 0 <= Actuator_short_circuit_trigger <= 255:
         actuator_bits = [
             (Actuator_short_circuit_trigger >> i) & 1 for i in range(7, -1, -1)
         ]
     else:
-        raise ValueError("Actuator short circuit value should be between 0 - 255.")
+        raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Short circuit trigger Library ### "
+                         "### Error Description: Actuator short circuit value should be between 0 - 255. ###     ")
 
     bits_array = np.array([actuator_bits, sensor_bits])
     return bits_array

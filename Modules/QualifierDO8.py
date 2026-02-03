@@ -60,7 +60,10 @@ def qualifier_do_8(
             # Convert to final bytes
             for i, bit in enumerate(qualifier_bits_for_byte_1):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DO Library ### "
+                         "### Error Description: Each bit must be either 0 or 1. ###     ")
                 qualifier_di_8_byte1 |= bit << (
                     7 - i
                 )  # Shift the bit to its correct position
@@ -70,7 +73,10 @@ def qualifier_do_8(
             )
             for i, bit in enumerate(qualifier_bits_for_byte_2):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DO Library ### "
+                         "### Error Description: Each bit must be either 0 or 1. ###     ")
                 qualifier_di_8_byte2 |= bit << (
                     7 - i
                 )  # Shift the bit to its correct position
@@ -103,16 +109,24 @@ def qualifier_do_8(
 
             for i, bit in enumerate(qualifier_bits_for_byte_1):
                 if bit not in (0, 1):
-                    raise ValueError("Each bit must be either 0 or 1.")
+                    raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DO Library ### "
+                         "### Error Description: Each bit must be either 0 or 1. ###     ")
                 qualifier_di_8_byte1 |= bit << (
                     7 - i
                 )  # Shift the bit to its correct position
 
         else:
-            raise ValueError(
-                "Two ore more values are set as True or none are set as True"
-            )
+            raise ValueError("### Error Code: 8 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DO Library ### "
+                         "### Error Description: Change one of the pinBased or portBased or compactBased Parameter to True and remaining value to False. ###     "
+                )
     else:
-        raise ValueError("Input must be a single byte (0-255).")
+        raise ValueError("### Error Code: 7 ### "
+                         "### Error Device: Murrelektronik_Module_MVK ### "
+                         "### Error Location: Qualifier DO Library ### "
+                         "### Error Description: Inputs from PLC to FMU must be bytes in the range 0–255. ###     ")
 
     return qualifier_di_8_byte1, qualifier_di_8_byte2
