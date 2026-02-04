@@ -60,10 +60,11 @@ def qualifier_do_8(
             # Convert to final bytes
             for i, bit in enumerate(qualifier_bits_for_byte_1):
                 if bit not in (0, 1):
-                    raise ValueError("### Error Code: 7 ### "
+                    raise ValueError("### Error Code: MVK_22 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: Qualifier DO Library ### "
-                         "### Error Description: Each bit must be either 0 or 1. ###     ")
+                         "### Error Description: Internal error of Qualifier DOs Each bit must be either 0 or 1. ### "
+                         "### Error Resolve: Contact FMU supplier for resolving the problem ###     ")
                 qualifier_di_8_byte1 |= bit << (
                     7 - i
                 )  # Shift the bit to its correct position
@@ -73,10 +74,11 @@ def qualifier_do_8(
             )
             for i, bit in enumerate(qualifier_bits_for_byte_2):
                 if bit not in (0, 1):
-                    raise ValueError("### Error Code: 7 ### "
+                    raise ValueError("### Error Code: MVK_23 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: Qualifier DO Library ### "
-                         "### Error Description: Each bit must be either 0 or 1. ###     ")
+                         "### Error Description: Internal error of Qualifier DOs Each bit must be either 0 or 1. ### "
+                         "### Error Resolve: Contact FMU supplier for resolving the problem ###     ")
                 qualifier_di_8_byte2 |= bit << (
                     7 - i
                 )  # Shift the bit to its correct position
@@ -109,22 +111,23 @@ def qualifier_do_8(
 
             for i, bit in enumerate(qualifier_bits_for_byte_1):
                 if bit not in (0, 1):
-                    raise ValueError("### Error Code: 7 ### "
+                    raise ValueError("### Error Code: MVK_24 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: Qualifier DO Library ### "
-                         "### Error Description: Each bit must be either 0 or 1. ###     ")
+                         "### Error Description: Internal error of Qualifier DOs Each bit must be either 0 or 1. ### "
+                         "### Error Resolve: Contact FMU supplier for resolving the problem ###     ")
                 qualifier_di_8_byte1 |= bit << (
                     7 - i
                 )  # Shift the bit to its correct position
 
         else:
-            raise ValueError("### Error Code: 8 ### "
+            raise ValueError("### Error Code: MVK_25 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: Qualifier DO Library ### "
                          "### Error Description: Change one of the pinBased or portBased or compactBased Parameter to True and remaining value to False. ###     "
                 )
     else:
-        raise ValueError("### Error Code: 7 ### "
+        raise ValueError("### Error Code: MVK_26 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: Qualifier DO Library ### "
                          "### Error Description: Inputs from PLC to FMU must be bytes in the range 0–255. ###     ")

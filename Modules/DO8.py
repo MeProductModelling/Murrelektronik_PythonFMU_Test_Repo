@@ -71,7 +71,7 @@ def digital_outputs(
 
         else:
             raise ValueError(
-                "### Error Code: 6 ### "
+                "### Error Code: MVK_15 ### "
                 "### Error Device: Murrelektronik_Module_MVK ### "
                 "### Error Location: 8 Digital Outputs Library ### "
                 "### Error Description: Two or more types of IO mappings are selected or none are selected. ### "
@@ -79,7 +79,7 @@ def digital_outputs(
             )
 
     else:
-        raise ValueError("### Error Code: 3 ### "
+        raise ValueError("### Error Code: MVK_16 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: 8 Digital Outputs Library ### "
                          "### Error Description: Input from PLC must be a value between 0-255. ### "

@@ -26,18 +26,18 @@ def digital_inputs(bits, pinBased, portBased, compact):  # This function is test
 
             for i, bit in enumerate(bitsforbyte1):
                 if bit not in (0, 1):
-                    raise ValueError("### Error Code: 1 ### "
+                    raise ValueError("### Error Code: MVK_1 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: 8 Digital Inputs Library ### "
-                         "### Error Description: Input values must be either 0 or 1 ###     ")
+                         "### Error Description: Sensor Input values must be either 0 or 1 ###     ")
                 byte1 |= bit << (7 - i)  # Shift the bit to its correct position
 
             for i, bit in enumerate(bitsforbyte2):
                 if bit not in (0, 1):
-                    raise ValueError("### Error Code: 1 ### "
+                    raise ValueError("### Error Code: MVK_2 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: 8 Digital Inputs Library ### "
-                         "### Error Description: Input values must be either 0 or 1 ###     ")
+                         "### Error Description: Sensor Input values must be either 0 or 1 ###     ")
                 byte2 |= bit << (7 - i)  # Shift the bit to its correct position
 
         elif pinBased == False and portBased == True and compact == False:
@@ -55,10 +55,10 @@ def digital_inputs(bits, pinBased, portBased, compact):  # This function is test
             )
             for j, bit in enumerate(bits):
                 if bit not in (0, 1):
-                    raise ValueError("### Error Code: 1 ### "
+                    raise ValueError("### Error Code: MVK_3 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: 8 Digital Inputs Library ### "
-                         "### Error Description: Input values must be either 0 or 1 ###     ")
+                         "### Error Description: Sensor Input values must be either 0 or 1 ###     ")
                 byte2 |= bit << (7 - j)  # Shift the bit to its correct position
 
         elif pinBased == False and portBased == False and compact == True:
@@ -77,14 +77,14 @@ def digital_inputs(bits, pinBased, portBased, compact):  # This function is test
 
             for k, bit in enumerate(bits):
                 if bit not in (0, 1):
-                    raise ValueError("### Error Code: 1 ### "
+                    raise ValueError("### Error Code: MVK_4 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: 8 Digital Inputs Library ### "
-                         "### Error Description: Input values must be either 0 or 1 ###     ")
+                         "### Error Description: Sensor Input values must be either 0 or 1 ###     ")
                 byte1 |= bit << (7 - k)  # Shift the bit to its correct position
 
         else:
-            raise ValueError("### Error Code: 3 ### "
+            raise ValueError("### Error Code: MVK_5 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: 8 Digital Inputs Library ### "
                          "### Error Description: Two or more types of IO mappings are selected or none are selected. ### "
@@ -92,10 +92,10 @@ def digital_inputs(bits, pinBased, portBased, compact):  # This function is test
                 )
 
     else:
-        raise ValueError("### Error Code: 2 ### "
+        raise ValueError("### Error Code: MVK_6 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: 8 Digital Inputs Library ### "
-                         "### Error Description: Inputs are either not connected or left empty. ### "
+                         "### Error Description: Sensor Inputs are either not connected to sensors or left empty. ### "
                          "### Error Resolve: Either connect the input to a sensor or add a value of 0. ### "
                          )
 

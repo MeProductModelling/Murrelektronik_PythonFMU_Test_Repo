@@ -19,7 +19,7 @@ def short_circuit_trigger(Sensor_short_circuit_trigger, Actuator_short_circuit_t
             (Sensor_short_circuit_trigger >> i) & 1 for i in range(7, -1, -1)
         ]
     else:
-        raise ValueError("### Error Code: 7 ### "
+        raise ValueError("### Error Code: MVK_27 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: Short circuit trigger Library ### "
                          "### Error Description: Sensor short circuit value should be between 0 - 255. ###     ")
@@ -29,7 +29,7 @@ def short_circuit_trigger(Sensor_short_circuit_trigger, Actuator_short_circuit_t
             (Actuator_short_circuit_trigger >> i) & 1 for i in range(7, -1, -1)
         ]
     else:
-        raise ValueError("### Error Code: 7 ### "
+        raise ValueError("### Error Code: MVK_28 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: Short circuit trigger Library ### "
                          "### Error Description: Actuator short circuit value should be between 0 - 255. ###     ")

@@ -146,18 +146,20 @@ def System_State(
     # convert bits to bytes
     for i, bit in enumerate(ss_byte_1_bits):
         if bit not in (0, 1):
-            raise ValueError("### Error Code: 7 ### "
+            raise ValueError("### Error Code: MVK_29 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: System State Library ### "
-                         "### Error Description: Each bit must be either 0 or 1. ###     ")
+                         "### Error Description: Internal error in System state function (Each bit must be either 0 or 1). ### "
+                         "### Error Resolve: Contact FMU Supplier to resolve the error. ###     ")
         ss_byte_1 |= bit << (7 - i)  # Shift the bit to its correct position
 
     for i, bit in enumerate(ss_byte_2_bits):
         if bit not in (0, 1):
-            raise ValueError("### Error Code: 7 ### "
+            raise ValueError("### Error Code: MVK_30 ### "
                          "### Error Device: Murrelektronik_Module_MVK ### "
                          "### Error Location: System State Library ### "
-                         "### Error Description: Each bit must be either 0 or 1. ###     ")
+                          "### Error Description: Internal error in System state function (Each bit must be either 0 or 1). ### "
+                         "### Error Resolve: Contact FMU Supplier to resolve the error. ###     ")
         ss_byte_2 |= bit << (7 - i)  # Shift the bit to its correct position
 
     outBytes = np.array([ss_byte_1, ss_byte_2, ss_byte_3, ss_byte_4])
